@@ -201,7 +201,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
   <h1><span class="green">Help for anything.</span><br/><span class="light">In seconds.</span></h1>
   <p>Your all-in-one life assistant — instant answers for housing, health, money, jobs, legal rights, and everything in between.</p>
   <div class="hero-btns">
-    <a href="#" class="btn-primary" onclick="openAuth(event,'signup')">Create Free Account</a>
+    <a href="#" class="btn-primary" id="heroSignupBtn" onclick="openAuth(event,'signup')">Create Free Account</a>
     <a href="#about" class="btn-secondary">Learn More</a>
   </div>
 </div>
@@ -275,7 +275,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
         <li><span class="check">✓</span>Up to 5 saved answers</li>
         <li><span class="check">✓</span>All resource links</li>
       </ul>
-      <button class="plan-btn plan-btn-free" onclick="openAuth(event,'signup')">Create Free Account</button>
+      <button class="plan-btn plan-btn-free" id="freeSignupBtn" onclick="openAuth(event,'signup')">Create Free Account</button>
     </div>
     <div class="plan featured">
       <div class="plan-badge">Most popular</div>
@@ -288,13 +288,13 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
         <li><span class="check">✓</span>Personalized action plans</li>
         <li><span class="check">✓</span>Early access to features</li>
       </ul>
-      <button class="plan-btn plan-btn-paid" onclick="openAuth(event,'signup')">Start Free 7-Day Trial</button>
+      <button class="plan-btn plan-btn-paid" onclick="openRoadmap(event)">Start Free 7-Day Trial</button>
     </div>
   </div>
 </div>
 
 <footer>
-  <h3>thrive.</h3>
+  <h3>thrive<span style="color:var(--navy);">.</span></h3>
   <p>Your all-in-one life assistant. Free for everyone.</p>
   <div class="footer-links">
     <a href="#">Privacy Policy</a>
@@ -336,6 +336,59 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
     <div class="dash-panel active" id="favPanel"></div>
     <div class="dash-panel" id="savedPanel"></div>
     <button class="modal-close" onclick="document.getElementById('dashModalBg').classList.remove('open')">Close</button>
+  </div>
+</div>
+
+<!-- ROADMAP MODAL -->
+<div class="modal-bg" id="roadmapModalBg" onclick="closeBg(event,'roadmapModalBg')">
+  <div class="modal" style="max-width:520px;">
+    <div id="roadmapSetup">
+      <h3>Your Thrive+ Roadmap</h3>
+      <div class="modal-sub">Tell us what you're working toward — we'll build your personal action plan</div>
+      <div class="q-list">
+        <div class="q-item">
+          <label>What is your main goal right now?</label>
+          <select id="rmGoal">
+            <option>Get stable housing</option>
+            <option>Improve my finances</option>
+            <option>Find a better job</option>
+            <option>Get healthcare coverage</option>
+            <option>Further my education</option>
+            <option>Get food assistance</option>
+            <option>Improve my mental health</option>
+            <option>Navigate immigration</option>
+            <option>Get disability benefits</option>
+          </select>
+        </div>
+        <div class="q-item">
+          <label>How would you describe your current situation?</label>
+          <select id="rmStatus">
+            <option>Just starting — don't know where to begin</option>
+            <option>I've done some research but need guidance</option>
+            <option>I've started the process but got stuck</option>
+            <option>Almost there — need a final push</option>
+          </select>
+        </div>
+        <div class="q-item">
+          <label>How quickly do you need this?</label>
+          <select id="rmUrgency">
+            <option>Urgent — within days</option>
+            <option>Soon — within a month</option>
+            <option>Planning ahead — 1–3 months</option>
+            <option>Long term — no rush</option>
+          </select>
+        </div>
+      </div>
+      <button class="q-submit" onclick="buildRoadmap()">Build My Roadmap →</button>
+      <button class="modal-close" onclick="document.getElementById('roadmapModalBg').classList.remove('open')">Cancel</button>
+    </div>
+    <div id="roadmapView" style="display:none;">
+      <h3 id="rmTitle"></h3>
+      <div class="modal-sub" id="rmSub"></div>
+      <div id="rmSteps" style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;"></div>
+      <button class="q-submit" onclick="document.getElementById('roadmapSetup').style.display='block';document.getElementById('roadmapView').style.display='none';">← Rebuild Roadmap</button>
+      <button class="modal-close" onclick="document.getElementById('roadmapModalBg').classList.remove('open')">Close</button>
+    </div>
   </div>
 </div>
 
@@ -1061,7 +1114,151 @@ function updateUserUI(){
   document.getElementById('navSignin').style.display=on?'none':'';
   document.getElementById('navSignup').style.display=on?'none':'';
   document.getElementById('userBar').style.display=on?'flex':'none';
+  var heroBtn=document.getElementById('heroSignupBtn');
+  var freeBtn=document.getElementById('freeSignupBtn');
+  if(heroBtn)heroBtn.style.display=on?'none':'';
+  if(freeBtn)freeBtn.style.display=on?'none':'';
   if(on){document.getElementById('userAvatar').textContent=currentUser.name.charAt(0).toUpperCase();document.getElementById('userName').textContent=currentUser.name;}
+}
+
+function openRoadmap(e){
+  if(e)e.preventDefault();
+  if(!currentUser){openAuth(null,'signup');return;}
+  document.getElementById('roadmapSetup').style.display='block';
+  document.getElementById('roadmapView').style.display='none';
+  document.getElementById('roadmapModalBg').classList.add('open');
+}
+
+var roadmaps={
+  'Get stable housing':{
+    steps:[
+      {title:'Assess your budget',desc:'Calculate how much you can afford — aim for rent under 30% of monthly income.',link:{n:'CFPB Budget Tool',u:'https://www.consumerfinance.gov/consumer-tools/budget/'}},
+      {title:'Search for housing',desc:'Browse listings in your area filtered to your budget.',link:{n:'Zillow Rentals',u:'https://www.zillow.com/homes/for_rent/'}},
+      {title:'Check rental assistance',desc:'See if you qualify for HUD housing vouchers or local aid.',link:{n:'HUD Rental Assistance',u:'https://www.hud.gov/topics/rental_assistance'}},
+      {title:'Know your tenant rights',desc:'Understand your rights before signing any lease.',link:{n:'Nolo Tenant Rights',u:'https://www.nolo.com/legal-encyclopedia/tenant-rights'}},
+      {title:'Apply & move in',desc:'Submit applications, get approval, and secure your home.'}
+    ]
+  },
+  'Improve my finances':{
+    steps:[
+      {title:'Check your credit score',desc:'Know where you stand — get your free report.',link:{n:'AnnualCreditReport.com',u:'https://www.annualcreditreport.com'}},
+      {title:'Build a budget',desc:'Track income vs. expenses and find where to cut back.',link:{n:'CFPB Budget Guide',u:'https://www.consumerfinance.gov/consumer-tools/budget/'}},
+      {title:'Tackle debt',desc:'List all debts and start with the highest interest first.',link:{n:'NFCC Debt Counseling',u:'https://www.nfcc.org'}},
+      {title:'Find assistance programs',desc:'Check what benefits or aid you may qualify for.',link:{n:'Benefits.gov',u:'https://www.benefits.gov'}},
+      {title:'Build an emergency fund',desc:'Aim for $500–$1,000 saved before anything else.'}
+    ]
+  },
+  'Find a better job':{
+    steps:[
+      {title:'Update your resume',desc:'Build or refresh your resume to match your target job.',link:{n:'Indeed Resume Builder',u:'https://www.indeed.com/create-resume'}},
+      {title:'Search for openings',desc:'Look for jobs in your field and location.',link:{n:'Indeed Job Search',u:'https://www.indeed.com'}},
+      {title:'Get job training if needed',desc:'Free training programs can boost your qualifications.',link:{n:'CareerOneStop Training',u:'https://www.careeronestop.org'}},
+      {title:'Prepare for interviews',desc:'Practice common questions and research the company.'},
+      {title:'Apply and follow up',desc:'Send tailored applications and follow up within a week.'}
+    ]
+  },
+  'Get healthcare coverage':{
+    steps:[
+      {title:'Check if you qualify for Medicaid',desc:'Low income may qualify you for free health coverage.',link:{n:'HealthCare.gov',u:'https://www.healthcare.gov'}},
+      {title:'Find a free health clinic',desc:'Get care now while you sort out coverage.',link:{n:'HRSA Clinic Finder',u:'https://findahealthcenter.hrsa.gov'}},
+      {title:'Compare insurance plans',desc:'During open enrollment compare costs and coverage.',link:{n:'HealthCare.gov Plans',u:'https://www.healthcare.gov/see-plans/'}},
+      {title:'Get prescription help',desc:'Find patient assistance for any medications you need.',link:{n:'NeedyMeds',u:'https://www.needymeds.org'}},
+      {title:'Enroll and use your coverage',desc:'Schedule a checkup and know your benefits.'}
+    ]
+  },
+  'Further my education':{
+    steps:[
+      {title:'Set your education goal',desc:'College, GED, trade school, or online courses — decide your path.'},
+      {title:'Apply for financial aid',desc:'Fill out FAFSA to access federal grants and loans.',link:{n:'FAFSA Application',u:'https://studentaid.gov/h/apply-for-aid/fafsa'}},
+      {title:'Search for scholarships',desc:'Free money you never have to pay back.',link:{n:'Fastweb Scholarships',u:'https://www.fastweb.com'}},
+      {title:'Start learning for free',desc:'Begin building skills today at no cost.',link:{n:'Khan Academy',u:'https://www.khanacademy.org'}},
+      {title:'Enroll and stay consistent',desc:'Commit to a schedule and track your progress weekly.'}
+    ]
+  },
+  'Get food assistance':{
+    steps:[
+      {title:'Find a food bank near you',desc:'Get immediate food support in your community.',link:{n:'Feeding America',u:'https://www.feedingamerica.org/find-your-local-foodbank'}},
+      {title:'Apply for SNAP benefits',desc:'Check eligibility and apply for monthly food assistance.',link:{n:'USDA SNAP',u:'https://www.fns.usda.gov/snap/recipient/eligibility'}},
+      {title:'Check WIC eligibility',desc:'WIC helps women, infants, and children with food and nutrition.',link:{n:'WIC Program',u:'https://www.fns.usda.gov/wic'}},
+      {title:'Learn to eat healthy on a budget',desc:'Stretch your food dollars with smart shopping tips.',link:{n:'USDA MyPlate Budget Tips',u:'https://www.myplate.gov/eat-healthy/budget-friendly'}},
+      {title:'Set up recurring support',desc:'Connect with local programs for ongoing food assistance.',link:{n:'211.org Local Resources',u:'https://www.211.org'}}
+    ]
+  },
+  'Improve my mental health':{
+    steps:[
+      {title:'Acknowledge where you are',desc:'Recognizing you need support is the first and hardest step.'},
+      {title:'Reach out for immediate help if needed',desc:'If you are in crisis please reach out now.',link:{n:'988 Lifeline — Call or Text 988',u:'https://988lifeline.org'}},
+      {title:'Find affordable therapy',desc:'Connect with a therapist on a sliding scale fee.',link:{n:'Open Path Collective',u:'https://openpathcollective.org'}},
+      {title:'Build daily coping habits',desc:'Exercise, sleep, and routine make a real difference.',link:{n:'ADAA — Anxiety & Stress Tips',u:'https://adaa.org/tips'}},
+      {title:'Find a support community',desc:'You are not alone — connect with others who understand.',link:{n:'SAMHSA Support Groups',u:'https://www.samhsa.gov/find-support'}}
+    ]
+  },
+  'Navigate immigration':{
+    steps:[
+      {title:'Understand your current status',desc:'Know exactly where you stand with USCIS.',link:{n:'USCIS.gov',u:'https://www.uscis.gov'}},
+      {title:'Know your rights',desc:'You have rights regardless of status.',link:{n:'ACLU Immigrant Rights',u:'https://www.aclu.org/know-your-rights/immigrants-rights'}},
+      {title:'Find free legal help',desc:'Connect with an immigration legal advocate.',link:{n:'Immigration Advocates Network',u:'https://www.immigrationadvocates.org/nonprofit/legaldirectory/'}},
+      {title:'Gather your documents',desc:'Collect ID, birth certificates, and any immigration paperwork.'},
+      {title:'Submit your application',desc:'File with USCIS and track your case status online.',link:{n:'USCIS Case Status',u:'https://egov.uscis.gov/casestatus/landing.do'}}
+    ]
+  },
+  'Get disability benefits':{
+    steps:[
+      {title:'Check if you qualify',desc:'Review SSA eligibility requirements for your condition.',link:{n:'SSA Disability Info',u:'https://www.ssa.gov/benefits/disability/'}},
+      {title:'Gather your medical records',desc:'You will need documentation from your doctors.'},
+      {title:'Apply for benefits online',desc:'Start your application directly with the SSA.',link:{n:'SSA — Apply Online',u:'https://www.ssa.gov/applyfordisability/'}},
+      {title:'Know your rights',desc:'Understand protections under the ADA.',link:{n:'ADA National Network',u:'https://adata.org'}},
+      {title:'Appeal if denied',desc:'Most first applications are denied — you can and should appeal.',link:{n:'SSA Appeals Process',u:'https://www.ssa.gov/appeals/'}}
+    ]
+  }
+};
+
+function buildRoadmap(){
+  var goal=document.getElementById('rmGoal').value;
+  var status=document.getElementById('rmStatus').value;
+  var urgency=document.getElementById('rmUrgency').value;
+  var map=roadmaps[goal];
+  if(!map)return;
+  document.getElementById('rmTitle').textContent=goal+' — Your Roadmap';
+  document.getElementById('rmSub').textContent=urgency+' · '+status;
+  var container=document.getElementById('rmSteps');
+  container.innerHTML='';
+  var saved=JSON.parse(localStorage.getItem('thrive_rm_'+goal)||'[]');
+  map.steps.forEach(function(s,i){
+    var done=saved.indexOf(i)>-1;
+    var div=document.createElement('div');
+    div.style.cssText='background:var(--bg3);border:1px solid '+(done?'var(--green)':'var(--border)')+';border-radius:14px;padding:14px 16px;transition:border-color .2s;';
+    var top=document.createElement('div');
+    top.style.cssText='display:flex;align-items:center;gap:10px;margin-bottom:6px;';
+    var check=document.createElement('div');
+    check.style.cssText='width:22px;height:22px;border-radius:50%;border:2px solid '+(done?'var(--green)':'var(--border2)')+';background:'+(done?'var(--green)':'transparent')+';display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all .15s;font-size:11px;color:#0a0d14;font-weight:800;';
+    check.textContent=done?'✓':'';
+    check.onclick=(function(idx,el,wrap){
+      return function(){
+        var sv2=JSON.parse(localStorage.getItem('thrive_rm_'+goal)||'[]');
+        var pos=sv2.indexOf(idx);
+        if(pos>-1){sv2.splice(pos,1);el.style.borderColor='var(--border2)';el.style.background='transparent';el.textContent='';wrap.style.borderColor='var(--border)';}
+        else{sv2.push(idx);el.style.borderColor='var(--green)';el.style.background='var(--green)';el.textContent='✓';wrap.style.borderColor='var(--green)';}
+        localStorage.setItem('thrive_rm_'+goal,JSON.stringify(sv2));
+      };
+    })(i,check,div);
+    var title=document.createElement('span');
+    title.style.cssText='font-family:"Exo 2",sans-serif;font-size:14px;font-weight:700;color:var(--text);';
+    title.textContent='Step '+(i+1)+': '+s.title;
+    top.appendChild(check);top.appendChild(title);div.appendChild(top);
+    var desc=document.createElement('div');
+    desc.style.cssText='font-size:13px;color:var(--text2);line-height:1.55;padding-left:32px;';
+    desc.textContent=s.desc;div.appendChild(desc);
+    if(s.link){
+      var lnk=document.createElement('a');
+      lnk.href=s.link.u;lnk.target='_blank';lnk.rel='noopener';
+      lnk.style.cssText='display:inline-block;margin-top:8px;margin-left:32px;font-size:12px;color:var(--green);text-decoration:none;font-family:"Exo 2",sans-serif;font-weight:600;';
+      lnk.textContent=s.link.n+' →';div.appendChild(lnk);
+    }
+    container.appendChild(div);
+  });
+  document.getElementById('roadmapSetup').style.display='none';
+  document.getElementById('roadmapView').style.display='block';
 }
 var sv=localStorage.getItem('thrive_user');
 if(sv){currentUser=JSON.parse(sv);updateUserUI();}
