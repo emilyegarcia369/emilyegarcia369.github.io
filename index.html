@@ -1270,6 +1270,70 @@ function buildRoadmap(){
 }
 var sv=localStorage.getItem('thrive_user');
 if(sv){currentUser=JSON.parse(sv);updateUserUI();}
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut as firebaseSignOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBXYdA8NNv6XVtDdKG5seoV3-QmwBuP2nE",
+  authDomain: "thrive-fbf65.firebaseapp.com",
+  projectId: "thrive-fbf65",
+  storageBucket: "thrive-fbf65.firebasestorage.app",
+  messagingSenderId: "366649090012",
+  appId: "1:366649090012:web:9214f1b5ab734924ae3919"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    currentUser = { name: user.displayName || user.email.split('@')[0], email: user.email };
+    updateUserUI();
+  } else {
+    currentUser = null;
+    updateUserUI();
+  }
+});
+
+window.handleAuth = async function() {
+  const email = document.getElementById('authEmail').value.trim();
+  const password = document.getElementById('authPassword').value.trim();
+  const name = document.getElementById('authName') ? document.getElementById('authName').value.trim() : '';
+  if (!email || !password) { alert('Please enter your email and password.'); return; }
+  try {
+    if (authMode === 'signup') {
+      const result = await createUserWithEmailAndPassword(auth, email, password);
+      currentUser = { name: name || email.split('@')[0], email: email };
+    } else {
+      const result = await signInWithEmailAndPassword(auth, email, password);
+      currentUser = { name: result.user.displayName || email.split('@')[0], email: email };
+    }
+    updateUserUI();
+    document.getElementById('authModalBg').classList.remove('open');
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+window.handleGoogle = async function() {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    currentUser = { name: result.user.displayName, email: result.user.email };
+    updateUserUI();
+    document.getElementById('authModalBg').classList.remove('open');
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+window.signOut = async function() {
+  await firebaseSignOut(auth);
+  currentUser = null;
+  updateUserUI();
+};
+</script>
 </script>
 </body>
 </html>
