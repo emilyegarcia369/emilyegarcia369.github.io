@@ -7,30 +7,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#0a0d14;--bg2:#111520;--bg3:#161b28;
-  --border:#1e2535;--border2:#2a3450;
-  --green:#00d68f;--green2:#00b377;
-  --green-glow:rgba(0,214,143,0.15);--green-glow2:rgba(0,214,143,0.08);
-  --navy:#4d7cff;
-  --text:#e8edf5;--text2:#8892a4;--text3:#4a5568;
-}
+:root{--bg:#0a0d14;--bg2:#111520;--bg3:#161b28;--border:#1e2535;--border2:#2a3450;--green:#00d68f;--green2:#00b377;--green-glow:rgba(0,214,143,0.15);--green-glow2:rgba(0,214,143,0.08);--navy:#4d7cff;--text:#e8edf5;--text2:#8892a4;--text3:#4a5568;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
-::-webkit-scrollbar{width:6px;}
-::-webkit-scrollbar-track{background:var(--bg2);}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg2);}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
 nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,13,20,0.92);backdrop-filter:blur(12px);z-index:100;}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-icon svg{width:32px;height:32px;}
 .logo-text{font-family:'Exo 2',sans-serif;font-size:22px;font-weight:800;color:var(--green);letter-spacing:-1px;}
 .logo-text span{color:var(--navy);}
 .nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{text-decoration:none;font-size:14px;color:var(--text2);font-weight:500;transition:color .15s;font-family:'Exo 2',sans-serif;letter-spacing:.3px;}
+.nav-links a{text-decoration:none;font-size:14px;color:var(--text2);font-weight:500;transition:color .15s;font-family:'Exo 2',sans-serif;}
 .nav-links a:hover{color:var(--green);}
 .nav-right{display:flex;gap:10px;align-items:center;}
-.nav-signin{font-size:14px;font-weight:600;color:var(--green);text-decoration:none;padding:8px 18px;border-radius:20px;border:1px solid var(--green);transition:all .15s;font-family:'Exo 2',sans-serif;cursor:pointer;background:transparent;}
+.nav-signin{font-size:14px;font-weight:600;color:var(--green);padding:8px 18px;border-radius:20px;border:1px solid var(--green);transition:all .15s;font-family:'Exo 2',sans-serif;cursor:pointer;background:transparent;}
 .nav-signin:hover{background:var(--green-glow);}
-.nav-btn{background:var(--green);color:#0a0d14;padding:9px 22px;border-radius:22px;font-size:14px;font-weight:700;text-decoration:none;transition:all .15s;font-family:'Exo 2',sans-serif;cursor:pointer;border:none;}
+.nav-btn{background:var(--green);color:#0a0d14;padding:9px 22px;border-radius:22px;font-size:14px;font-weight:700;transition:all .15s;font-family:'Exo 2',sans-serif;cursor:pointer;border:none;}
 .nav-btn:hover{background:var(--green2);}
 .hero{text-align:center;padding:110px 20px 90px;background:radial-gradient(ellipse at 50% 0%,rgba(0,214,143,0.08) 0%,transparent 70%);}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-glow);color:var(--green);font-size:11px;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:28px;border:1px solid rgba(0,214,143,0.3);letter-spacing:.1em;text-transform:uppercase;font-family:'Exo 2',sans-serif;}
@@ -39,7 +29,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .hero h1 .light{color:var(--text);}
 .hero p{font-size:17px;color:var(--text2);max-width:500px;margin:0 auto 44px;line-height:1.75;}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.btn-primary{background:var(--green);color:#0a0d14;padding:15px 36px;border-radius:30px;text-decoration:none;font-size:15px;font-weight:700;transition:all .15s;font-family:'Exo 2',sans-serif;border:none;cursor:pointer;}
+.btn-primary{background:var(--green);color:#0a0d14;padding:15px 36px;border-radius:30px;font-size:15px;font-weight:700;transition:all .15s;font-family:'Exo 2',sans-serif;border:none;cursor:pointer;}
 .btn-primary:hover{background:var(--green2);box-shadow:0 0 20px rgba(0,214,143,0.3);}
 .btn-secondary{background:transparent;color:var(--text);padding:15px 36px;border-radius:30px;text-decoration:none;font-size:15px;font-weight:700;border:1px solid var(--border2);transition:all .15s;font-family:'Exo 2',sans-serif;}
 .btn-secondary:hover{border-color:var(--green);color:var(--green);}
@@ -55,7 +45,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;max-width:960px;margin:0 auto;}
 .cat{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px 16px;cursor:pointer;transition:all .2s;text-decoration:none;display:flex;flex-direction:column;gap:4px;}
 .cat:hover{border-color:var(--green);background:var(--bg3);box-shadow:0 0 16px var(--green-glow2);}
-.cat-name{font-family:'Exo 2',sans-serif;font-size:13px;font-weight:700;color:var(--text);letter-spacing:.2px;}
+.cat-name{font-family:'Exo 2',sans-serif;font-size:13px;font-weight:700;color:var(--text);}
 .cat-desc{font-size:11px;color:var(--text3);}
 .about{background:linear-gradient(135deg,#0d1528 0%,#0a1a14 100%);padding:80px 20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .about-inner{max-width:680px;margin:0 auto;text-align:center;}
@@ -67,26 +57,26 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;max-width:860px;margin:0 auto;}
 .step{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:26px 20px;transition:border-color .2s;}
 .step:hover{border-color:var(--green);}
-.step-num{font-family:'Exo 2',sans-serif;font-size:36px;font-weight:900;color:var(--border2);margin-bottom:12px;letter-spacing:-1px;line-height:1;}
+.step-num{font-family:'Exo 2',sans-serif;font-size:36px;font-weight:900;color:var(--border2);margin-bottom:12px;line-height:1;}
 .step h3{font-family:'Exo 2',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;}
 .step p{font-size:13px;color:var(--text2);line-height:1.6;}
 .pricing{padding:80px 20px;}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:620px;margin:0 auto;}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:640px;margin:0 auto;}
 .plan{background:var(--bg2);border:1px solid var(--border);border-radius:22px;padding:30px 26px;}
 .plan.featured{border:1px solid var(--green);box-shadow:0 0 30px var(--green-glow2);}
-.plan-badge{display:inline-block;background:var(--green);color:#0a0d14;font-size:10px;font-weight:800;padding:4px 14px;border-radius:20px;margin-bottom:14px;font-family:'Exo 2',sans-serif;letter-spacing:.08em;text-transform:uppercase;}
+.plan-badge{display:inline-block;background:var(--green);color:#0a0d14;font-size:10px;font-weight:800;padding:4px 14px;border-radius:20px;margin-bottom:14px;font-family:'Exo 2',sans-serif;text-transform:uppercase;}
 .plan h3{font-family:'Exo 2',sans-serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:6px;}
 .plan-price{font-family:'Exo 2',sans-serif;font-size:38px;font-weight:900;color:var(--green);margin-bottom:4px;letter-spacing:-1px;}
-.plan-price span{font-size:14px;font-weight:400;color:var(--text3);letter-spacing:0;font-family:'Inter',sans-serif;}
+.plan-price span{font-size:14px;font-weight:400;color:var(--text3);font-family:'Inter',sans-serif;}
 .plan ul{list-style:none;margin:18px 0 26px;}
 .plan ul li{font-size:14px;color:var(--text2);padding:7px 0;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);}
 .plan ul li:last-child{border:none;}
 .check{width:18px;height:18px;border-radius:50%;background:var(--green-glow);border:1px solid rgba(0,214,143,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:var(--green);font-weight:800;}
-.plan-btn{display:block;text-align:center;padding:14px;border-radius:26px;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:'Exo 2',sans-serif;letter-spacing:.3px;transition:all .15s;text-decoration:none;width:100%;}
+.plan-btn{display:block;text-align:center;padding:14px;border-radius:26px;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:'Exo 2',sans-serif;transition:all .15s;width:100%;}
 .plan-btn-free{border:1px solid var(--border2);color:var(--text);background:transparent;}
 .plan-btn-free:hover{border-color:var(--green);color:var(--green);}
 .plan-btn-paid{background:var(--green);color:#0a0d14;}
-.plan-btn-paid:hover{background:var(--green2);box-shadow:0 0 20px rgba(0,214,143,0.3);}
+.plan-btn-paid:hover{background:var(--green2);}
 .app-section{padding:80px 20px;background:radial-gradient(ellipse at 50% 100%,rgba(0,214,143,0.06) 0%,transparent 70%);}
 .app-inner{max-width:700px;margin:0 auto;text-align:center;}
 .app-inner h2{font-family:'Exo 2',sans-serif;font-size:38px;font-weight:800;color:var(--text);margin-bottom:14px;letter-spacing:-1px;}
@@ -97,8 +87,11 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .app-badge:hover{border-color:var(--green);color:var(--green);}
 .app-badge svg{width:22px;height:22px;}
 footer{background:var(--bg2);border-top:1px solid var(--border);text-align:center;padding:52px 20px;}
-footer h3{font-family:'Exo 2',sans-serif;font-size:26px;font-weight:800;color:var(--green);margin-bottom:8px;letter-spacing:-1px;}
-footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
+.footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px;}
+.footer-logo svg{width:28px;height:28px;}
+footer h3{font-family:'Exo 2',sans-serif;font-size:24px;font-weight:800;color:var(--green);letter-spacing:-1px;display:inline;}
+footer h3 span{color:var(--navy);}
+footer p{font-size:14px;color:var(--text3);margin-bottom:24px;margin-top:8px;}
 .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
 .footer-links a{color:var(--text3);font-size:13px;text-decoration:none;transition:color .15s;}
 .footer-links a:hover{color:var(--green);}
@@ -106,15 +99,16 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
 .modal-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:999;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
 .modal-bg.open{display:flex;}
 .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:22px;padding:28px;max-width:480px;width:92%;max-height:85vh;overflow-y:auto;}
-.modal h3{font-family:'Exo 2',sans-serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:4px;letter-spacing:-.3px;}
+.modal h3{font-family:'Exo 2',sans-serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:4px;}
 .modal-sub{font-size:12px;color:var(--text3);margin-bottom:18px;}
 .q-list{display:flex;flex-direction:column;gap:12px;margin-bottom:18px;}
 .q-item label{display:block;font-size:11px;font-weight:700;color:var(--text2);margin-bottom:6px;font-family:'Exo 2',sans-serif;letter-spacing:.4px;text-transform:uppercase;}
-.q-item input,.q-item select{width:100%;padding:11px 14px;border-radius:12px;border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border .15s;}
-.q-item input:focus,.q-item select:focus{border-color:var(--green);}
+.q-item input,.q-item select,.q-item textarea{width:100%;padding:11px 14px;border-radius:12px;border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border .15s;}
+.q-item input:focus,.q-item select:focus,.q-item textarea:focus{border-color:var(--green);}
 .q-item select option{background:var(--bg3);}
-.q-item input::placeholder{color:var(--text3);}
-.q-submit{width:100%;padding:13px;border-radius:22px;border:none;background:var(--green);color:#0a0d14;font-size:14px;font-weight:700;cursor:pointer;font-family:'Exo 2',sans-serif;letter-spacing:.3px;transition:all .15s;margin-bottom:10px;}
+.q-item input::placeholder,.q-item textarea::placeholder{color:var(--text3);}
+.q-item textarea{resize:vertical;min-height:80px;}
+.q-submit{width:100%;padding:13px;border-radius:22px;border:none;background:var(--green);color:#0a0d14;font-size:14px;font-weight:700;cursor:pointer;font-family:'Exo 2',sans-serif;transition:all .15s;margin-bottom:10px;}
 .q-submit:hover{background:var(--green2);}
 .result-links{display:flex;flex-direction:column;gap:8px;}
 .result-row{display:flex;align-items:center;gap:8px;}
@@ -128,7 +122,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
 .modal-close{margin-top:14px;width:100%;padding:12px;border-radius:22px;border:1px solid var(--border);background:transparent;color:var(--text3);font-size:13px;cursor:pointer;font-weight:600;font-family:'Exo 2',sans-serif;transition:all .15s;}
 .modal-close:hover{border-color:var(--text3);color:var(--text);}
 .dash-tabs{display:flex;gap:0;margin-bottom:20px;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-.dash-tab{flex:1;padding:11px;text-align:center;font-size:13px;font-weight:700;cursor:pointer;color:var(--text3);background:var(--bg3);transition:all .15s;font-family:'Exo 2',sans-serif;letter-spacing:.3px;}
+.dash-tab{flex:1;padding:11px;text-align:center;font-size:13px;font-weight:700;cursor:pointer;color:var(--text3);background:var(--bg3);transition:all .15s;font-family:'Exo 2',sans-serif;}
 .dash-tab.active{background:var(--green);color:#0a0d14;}
 .dash-panel{display:none;}
 .dash-panel.active{display:block;}
@@ -161,25 +155,45 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
 .user-name{font-size:14px;font-weight:600;color:var(--text);font-family:'Exo 2',sans-serif;}
 .signout-btn{font-size:12px;color:var(--text3);cursor:pointer;border:none;background:none;padding:4px 8px;transition:color .15s;}
 .signout-btn:hover{color:var(--green);}
+.chat-wrap{display:flex;flex-direction:column;border:1px solid var(--border2);border-radius:22px;overflow:hidden;max-width:700px;margin:0 auto;}
+.chat-msgs{height:340px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.chat-msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.55;}
+.chat-msg.user{align-self:flex-end;background:var(--green-glow);color:var(--green);border:1px solid rgba(0,214,143,0.2);border-bottom-right-radius:4px;}
+.chat-msg.ai{align-self:flex-start;background:var(--bg3);color:var(--text);border:1px solid var(--border);border-bottom-left-radius:4px;}
+.chat-limit{font-size:11px;color:var(--text3);padding:6px 14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.chat-limit span{color:var(--green);cursor:pointer;text-decoration:underline;}
+.chat-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border);}
+.chat-input-row input{flex:1;padding:10px 14px;border-radius:12px;border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;}
+.chat-input-row input:focus{border-color:var(--green);}
+.chat-input-row input::placeholder{color:var(--text3);}
+.chat-send{padding:10px 16px;border-radius:12px;border:none;background:var(--green);color:#0a0d14;font-size:14px;font-weight:700;cursor:pointer;font-family:'Exo 2',sans-serif;transition:all .15s;}
+.chat-send:hover{background:var(--green2);}
+.chat-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px;border-top:1px solid var(--border);}
+.chip{padding:5px 12px;border-radius:20px;border:1px solid var(--border2);font-size:12px;color:var(--text2);cursor:pointer;background:transparent;font-family:'Inter',sans-serif;transition:all .15s;}
+.chip:hover{border-color:var(--green);color:var(--green);}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--green);display:inline-block;animation:bounce 1s infinite;}
+.dot:nth-child(2){animation-delay:.15s;}.dot:nth-child(3){animation-delay:.3s;}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
 @media(max-width:600px){.hero h1{font-size:40px;letter-spacing:-1.5px;}nav{padding:16px 18px;}.nav-links{display:none;}}
 </style>
 </head>
 <body>
 <nav>
   <a class="logo" href="#">
-    <div class="logo-icon">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="8" fill="#00d68f" fill-opacity="0.12"/>
-        <rect x="1" y="1" width="30" height="30" rx="7" stroke="#00d68f" stroke-opacity="0.25" stroke-width="1" fill="none"/>
-        <rect x="6" y="9" width="20" height="3.5" rx="1.75" fill="#00d68f"/>
-        <rect x="13" y="9" width="6" height="15" rx="3" fill="#00d68f"/>
-        <circle cx="25" cy="25" r="2.5" fill="#4d7cff"/>
-      </svg>
-    </div>
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="10" fill="#00d68f" fill-opacity="0.12"/>
+      <rect x="1" y="1" width="30" height="30" rx="9" stroke="#00d68f" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+      <path d="M16 26 C16 26 9 21 9 15 C9 11 12 8 16 8 C20 8 23 11 23 15 C23 21 16 26 16 26Z" fill="#00d68f" fill-opacity="0.2" stroke="#00d68f" stroke-width="1.5"/>
+      <line x1="16" y1="26" x2="16" y2="12" stroke="#00d68f" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="16" y1="18" x2="12" y2="15" stroke="#00d68f" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="16" y1="21" x2="20" y2="18" stroke="#00d68f" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="24" cy="25" r="3" fill="#4d7cff"/>
+    </svg>
     <span class="logo-text">thrive<span>.</span></span>
   </a>
   <div class="nav-links">
     <a href="#categories">Categories</a>
+    <a href="#ai">Ask AI</a>
     <a href="#how">How it works</a>
     <a href="#about">About</a>
     <a href="#pricing">Pricing</a>
@@ -195,32 +209,54 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
     <button class="nav-btn" id="navSignup" onclick="openAuth(event,'signup')">Get Started</button>
   </div>
 </nav>
-
 <div class="hero">
   <div class="hero-badge">✦ Free for everyone</div>
   <h1><span class="green">Help for anything.</span><br/><span class="light">In seconds.</span></h1>
   <p>Your all-in-one life assistant — instant answers for housing, health, money, jobs, legal rights, and everything in between.</p>
   <div class="hero-btns">
     <button class="btn-primary" id="heroSignupBtn" onclick="openAuth(event,'signup')">Create Free Account</button>
-    <a href="#about" class="btn-secondary">Learn More</a>
+    <a href="#categories" class="btn-secondary">Browse Categories</a>
   </div>
 </div>
-
 <div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">16+</div><div class="stat-label">Life categories</div></div>
+  <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Life categories</div></div>
   <div class="stat-item"><div class="stat-num">10s</div><div class="stat-label">Avg. time to help</div></div>
   <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free to start</div></div>
   <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">Always available</div></div>
 </div>
-
 <div class="section" id="categories">
   <div class="section-center">
     <h2>Help for every <span>area of life</span></h2>
-    <p>Tap any category — Thrive asks the right questions first, then sends you exactly where you need to go.</p>
+    <p>Tap any category — Thrive asks smart questions first, then takes you directly to exactly what you need.</p>
   </div>
   <div class="cats" id="catGrid"></div>
 </div>
-
+<div class="section" id="ai" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-center">
+    <h2>Ask <span>Thrive AI</span></h2>
+    <p>Not sure where to start? Just ask. Thrive AI answers any life question instantly — free users get 10 chats per day, Thrive+ members get unlimited.</p>
+  </div>
+  <div class="chat-wrap">
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="chat-msg ai">Hi! I'm Thrive AI. Ask me anything about housing, health, money, jobs, legal rights, or anything else you need help with.</div>
+    </div>
+    <div class="chat-chips" id="chatChips">
+      <span class="chip" onclick="sendChip(this)">How do I make a budget?</span>
+      <span class="chip" onclick="sendChip(this)">What are my tenant rights?</span>
+      <span class="chip" onclick="sendChip(this)">How do I apply for SNAP?</span>
+      <span class="chip" onclick="sendChip(this)">Help me find affordable healthcare</span>
+      <span class="chip" onclick="sendChip(this)">How do I write a resume?</span>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Ask anything..." onkeydown="if(event.key==='Enter')sendChat()"/>
+      <button class="chat-send" onclick="sendChat()">Send</button>
+    </div>
+    <div class="chat-limit">
+      <span id="chatLimitText">10 free chats per day</span>
+      <span onclick="openAuth(event,'signup')" id="chatUpgradeBtn">Upgrade for unlimited →</span>
+    </div>
+  </div>
+</div>
 <div class="how" id="how">
   <div class="section-center">
     <h2>How <span>Thrive</span> works</h2>
@@ -228,12 +264,11 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
   </div>
   <div class="steps">
     <div class="step"><div class="step-num">01</div><h3>Create an account</h3><p>Sign up free with Google or email — no credit card needed.</p></div>
-    <div class="step"><div class="step-num">02</div><h3>Choose a category</h3><p>Browse 16 life categories or search for what you need.</p></div>
-    <div class="step"><div class="step-num">03</div><h3>Answer a few questions</h3><p>Thrive asks smart questions so results actually match your situation.</p></div>
+    <div class="step"><div class="step-num">02</div><h3>Choose a category</h3><p>Browse 20+ life categories or ask Thrive AI directly.</p></div>
+    <div class="step"><div class="step-num">03</div><h3>Answer a few questions</h3><p>Thrive asks smart questions so results match your exact situation.</p></div>
     <div class="step"><div class="step-num">04</div><h3>Get taken there directly</h3><p>Links open to exact search results based on your answers — not just homepages.</p></div>
   </div>
 </div>
-
 <div class="about" id="about">
   <div class="about-inner">
     <h2>Built for <span>everyone</span></h2>
@@ -242,24 +277,16 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
     <p><strong>You deserve help that's fast, simple, and built with you in mind. That's Thrive.</strong></p>
   </div>
 </div>
-
 <div class="app-section" id="app">
   <div class="app-inner">
     <h2>Thrive <span>App</span> — coming soon</h2>
     <p>The full Thrive experience is coming to iOS and Android. Get instant help, AI-powered answers, and all your saved resources in your pocket.</p>
     <div class="app-badges">
-      <a href="#" class="app-badge">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        App Store — iOS
-      </a>
-      <a href="#" class="app-badge">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l12.6-12.6-3.18-3.18L3.18 23.76zM20.44 10.64l-2.78-1.61-3.54 3.54 3.54 3.54 2.81-1.62c.8-.46.8-1.81-.03-1.85zM2.01 1.05C1.8 1.27 1.69 1.6 1.69 2.03V21.97c0 .43.12.76.33.99l.05.04 11.22-11.22v-.27L2.06 1.01l-.05.04zM13.41 13.41L4.19 22.63c.3.17.66.21 1.02.01l12.6-7.27-4.4-1.96z"/></svg>
-        Google Play — Android
-      </a>
+      <a href="#" class="app-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store — iOS</a>
+      <a href="#" class="app-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l12.6-12.6-3.18-3.18L3.18 23.76zM20.44 10.64l-2.78-1.61-3.54 3.54 3.54 3.54 2.81-1.62c.8-.46.8-1.81-.03-1.85zM2.01 1.05C1.8 1.27 1.69 1.6 1.69 2.03V21.97c0 .43.12.76.33.99l.05.04 11.22-11.22v-.27L2.06 1.01l-.05.04zM13.41 13.41L4.19 22.63c.3.17.66.21 1.02.01l12.6-7.27-4.4-1.96z"/></svg>Google Play — Android</a>
     </div>
   </div>
 </div>
-
 <div class="pricing section" id="pricing">
   <div class="section-center">
     <h2>Simple, <span>honest</span> pricing</h2>
@@ -272,7 +299,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
       <ul>
         <li><span class="check">✓</span>10 AI chats per day</li>
         <li><span class="check">✓</span>Full category browsing</li>
-        <li><span class="check">✓</span>Up to 5 saved answers</li>
+        <li><span class="check">✓</span>Up to 5 saved categories</li>
         <li><span class="check">✓</span>All resource links</li>
       </ul>
       <button class="plan-btn plan-btn-free" id="freeSignupBtn" onclick="openAuth(event,'signup')">Create Free Account</button>
@@ -284,7 +311,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
       <ul>
         <li><span class="check">✓</span>Unlimited AI chat</li>
         <li><span class="check">✓</span>Completely ad-free</li>
-        <li><span class="check">✓</span>Unlimited saved answers</li>
+        <li><span class="check">✓</span>Unlimited saved categories</li>
         <li><span class="check">✓</span>Personalized action plans</li>
         <li><span class="check">✓</span>Progress roadmap tracker</li>
         <li><span class="check">✓</span>Benefits calculator</li>
@@ -293,31 +320,37 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
         <li><span class="check">✓</span>Application tracker</li>
         <li><span class="check">✓</span>Scam detector</li>
         <li><span class="check">✓</span>Mental health check-in</li>
-        <li><span class="check">✓</span>Life profile — auto-filters results</li>
+        <li><span class="check">✓</span>Life profile — auto-fills forms & filters results</li>
         <li><span class="check">✓</span>Early access to new features</li>
       </ul>
       <button class="plan-btn plan-btn-paid" onclick="window.open('https://buy.stripe.com/7sY28q7nB1XGaEt6zoeIw00','_blank')">Get Thrive+ for $7.99/month</button>
     </div>
   </div>
 </div>
-
 <footer>
-  <h3>thrive<span style="color:var(--navy);">.</span></h3>
+  <div class="footer-logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="10" fill="#00d68f" fill-opacity="0.12"/>
+      <path d="M16 26 C16 26 9 21 9 15 C9 11 12 8 16 8 C20 8 23 11 23 15 C23 21 16 26 16 26Z" fill="#00d68f" fill-opacity="0.2" stroke="#00d68f" stroke-width="1.5"/>
+      <line x1="16" y1="26" x2="16" y2="12" stroke="#00d68f" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="24" cy="25" r="3" fill="#4d7cff"/>
+    </svg>
+    <h3>thrive<span>.</span></h3>
+  </div>
   <p>Your all-in-one life assistant. Free for everyone.</p>
   <div class="footer-links">
     <a href="privacy.html">Privacy Policy</a>
-    <a href="#">Terms of Service</a>
+    <a href="terms.html">Terms of Service</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="footer-bottom">© 2026 Thrive. All rights reserved.</div>
 </footer>
-
-<!-- CATEGORY MODAL -->
+<!-- MODALS -->
 <div class="modal-bg" id="catModalBg" onclick="closeBg(event,'catModalBg')">
   <div class="modal">
     <div id="catQView">
       <h3 id="catModalTitle"></h3>
-      <div class="modal-sub">Answer a few quick questions — we'll send you exactly where you need to go</div>
+      <div class="modal-sub">Answer a few questions — we'll take you exactly where you need to go</div>
       <div class="q-list" id="qList"></div>
       <button class="q-submit" onclick="showResults()">Find My Resources →</button>
       <button class="modal-close" onclick="document.getElementById('catModalBg').classList.remove('open')">Cancel</button>
@@ -325,14 +358,12 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
     <div id="catRView" style="display:none;">
       <button class="back-btn" onclick="showQuestions()">← Back</button>
       <h3 id="catRTitle"></h3>
-      <div class="modal-sub">Links go directly to results based on your answers</div>
+      <div class="modal-sub">Results matched to your answers — click to go directly there</div>
       <div class="result-links" id="resultLinks"></div>
       <button class="modal-close" onclick="document.getElementById('catModalBg').classList.remove('open')">Close</button>
     </div>
   </div>
 </div>
-
-<!-- SAVED/FAV MODAL -->
 <div class="modal-bg" id="dashModalBg" onclick="closeBg(event,'dashModalBg')">
   <div class="modal">
     <h3>My Thrive</h3>
@@ -346,8 +377,6 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
     <button class="modal-close" onclick="document.getElementById('dashModalBg').classList.remove('open')">Close</button>
   </div>
 </div>
-
-<!-- AUTH MODAL -->
 <div class="modal-bg" id="authModalBg" onclick="closeBg(event,'authModalBg')">
   <div class="modal">
     <h3 id="authTitle">Welcome to Thrive</h3>
@@ -370,43 +399,22 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
     </div>
   </div>
 </div>
-
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
 <script>
-// Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyBXYdA8NNv6XVtDdKG5seoV3-QmwBuP2nE",
-  authDomain: "thrive-fbf65.firebaseapp.com",
-  projectId: "thrive-fbf65",
-  storageBucket: "thrive-fbf65.firebasestorage.app",
-  messagingSenderId: "366649090012",
-  appId: "1:366649090012:web:9214f1b5ab734924ae3919"
-};
-
+const firebaseConfig={apiKey:"AIzaSyBXYdA8NNv6XVtDdKG5seoV3-QmwBuP2nE",authDomain:"thrive-fbf65.firebaseapp.com",projectId:"thrive-fbf65",storageBucket:"thrive-fbf65.firebasestorage.app",messagingSenderId:"366649090012",appId:"1:366649090012:web:9214f1b5ab734924ae3919"};
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-const googleProvider = new firebase.auth.GoogleAuthProvider();
+const auth=firebase.auth();
+const db=firebase.firestore();
+const googleProvider=new firebase.auth.GoogleAuthProvider();
 
 auth.onAuthStateChanged(function(user){
   if(user){
     currentUser={name:user.displayName||user.email.split('@')[0],email:user.email};
-    db.collection('users').doc(user.email).collection('saved').orderBy('id','desc').limit(50).get().then(function(snap){
-      savedItems=[];
-      snap.forEach(function(doc){savedItems.push(doc.data());});
-      localStorage.setItem('thrive_saved',JSON.stringify(savedItems));
-    }).catch(function(e){console.log('Load saved error:',e);});
-    db.collection('users').doc(user.email).collection('favorites').get().then(function(snap){
-      favorites=[];
-      snap.forEach(function(doc){favorites.push(doc.data());});
-      localStorage.setItem('thrive_fav',JSON.stringify(favorites));
-    }).catch(function(e){console.log('Load fav error:',e);});
-  } else {
-    currentUser=null;
-  }
+    db.collection('users').doc(user.email).collection('saved').orderBy('id','desc').limit(50).get().then(function(snap){savedItems=[];snap.forEach(function(doc){savedItems.push(doc.data());});localStorage.setItem('thrive_saved',JSON.stringify(savedItems));}).catch(function(){});
+    db.collection('users').doc(user.email).collection('favorites').get().then(function(snap){favorites=[];snap.forEach(function(doc){favorites.push(doc.data());});localStorage.setItem('thrive_fav',JSON.stringify(favorites));}).catch(function(){});
+  } else {currentUser=null;}
   updateUserUI();
 });
 
@@ -416,326 +424,102 @@ function handleAuth(){
   var name=authMode==='signup'?document.getElementById('authName').value.trim():'';
   if(!email||!password){alert('Please enter your email and password.');return;}
   if(authMode==='signup'){
-    auth.createUserWithEmailAndPassword(email,password)
-      .then(function(result){
-        return result.user.updateProfile({displayName:name||email.split('@')[0]});
-      })
-      .then(function(){
-        document.getElementById('authModalBg').classList.remove('open');
-      })
-      .catch(function(error){alert(error.message);});
+    auth.createUserWithEmailAndPassword(email,password).then(function(r){return r.user.updateProfile({displayName:name||email.split('@')[0]});}).then(function(){document.getElementById('authModalBg').classList.remove('open');}).catch(function(e){alert(e.message);});
   } else {
-    auth.signInWithEmailAndPassword(email,password)
-      .then(function(){
-        document.getElementById('authModalBg').classList.remove('open');
-      })
-      .catch(function(error){alert(error.message);});
+    auth.signInWithEmailAndPassword(email,password).then(function(){document.getElementById('authModalBg').classList.remove('open');}).catch(function(e){alert(e.message);});
   }
 }
+function handleGoogle(){auth.signInWithPopup(googleProvider).then(function(){document.getElementById('authModalBg').classList.remove('open');}).catch(function(e){alert(e.message);});}
+function doSignOut(){auth.signOut();}
 
-function handleGoogle(){
-  auth.signInWithPopup(googleProvider)
-    .then(function(){
-      document.getElementById('authModalBg').classList.remove('open');
-    })
-    .catch(function(error){alert(error.message);});
-}
-
-function doSignOut(){
-  auth.signOut();
-}
-
-// App state
-var currentUser=null,authMode='signup';
+var currentUser=null,authMode='signup',isPremium=false;
 var favorites=JSON.parse(localStorage.getItem('thrive_fav')||'[]');
 var savedItems=JSON.parse(localStorage.getItem('thrive_saved')||'[]');
 var currentCat=null,currentAnswers={};
+var chatCount=parseInt(localStorage.getItem('thrive_chat_count')||'0');
+var chatDate=localStorage.getItem('thrive_chat_date')||'';
+var today=new Date().toDateString();
+if(chatDate!==today){chatCount=0;localStorage.setItem('thrive_chat_count','0');localStorage.setItem('thrive_chat_date',today);}
+var FREE_CHAT_LIMIT=10;
+var FREE_SAVE_LIMIT=5;
 
 var cats=[
   {name:'Money & Finance',desc:'Budget, debt, assistance',
-   questions:[
-     {id:'concern',l:'What do you need help with?',t:'select',o:['Making a budget','Getting out of debt','Finding assistance','Understanding credit','Filing taxes free']},
-     {id:'income',l:'Monthly income range',t:'select',o:['Under $1,000','$1,000–$2,000','$2,000–$4,000','$4,000+']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. California'}
-   ],
-   buildLinks:function(a){
-     var concern=a.concern||'';
-     var links=[];
-     if(concern.includes('budget')||concern.includes('Budget')){links.push({n:'CFPB Budget Guide',u:'https://www.consumerfinance.gov/consumer-tools/budget/'});links.push({n:'NerdWallet Budget Calculator',u:'https://www.nerdwallet.com/article/finance/budget-calculator'});}
-     if(concern.includes('debt')){links.push({n:'NFCC — Free Debt Counseling',u:'https://www.nfcc.org/agency-locator/'});links.push({n:'Debt.org — Get Out of Debt',u:'https://www.debt.org/advice/how-to-get-out-of-debt/'});}
-     if(concern.includes('assistance')){links.push({n:'Benefits.gov — Find Assistance',u:'https://www.benefits.gov'});links.push({n:'211.org — Local Help',u:'https://www.211.org'});}
-     if(concern.includes('credit')){links.push({n:'AnnualCreditReport.com',u:'https://www.annualcreditreport.com'});links.push({n:'Experian — Free Credit Report',u:'https://www.experian.com/consumer-products/free-credit-report.html'});}
-     if(concern.includes('tax')||concern.includes('Tax')){links.push({n:'IRS Free File',u:'https://www.irs.gov/filing/free-file-do-your-federal-taxes-for-free'});links.push({n:'VITA — Free Tax Help',u:'https://www.irs.gov/vita'});}
-     if(links.length===0){links.push({n:'Benefits.gov',u:'https://www.benefits.gov'});links.push({n:'CFPB Tools',u:'https://www.consumerfinance.gov/consumer-tools/'});}
-     return links;
-   }
+   questions:[{id:'concern',l:'What do you need help with?',t:'select',o:['Making a budget','Getting out of debt','Finding financial assistance','Understanding my credit score','Filing taxes for free','Opening a bank account','Managing bills','Saving money']},{id:'income',l:'Monthly income range',t:'select',o:['Under $1,000','$1,000–$2,000','$2,000–$4,000','$4,000–$6,000','$6,000+','Prefer not to say']},{id:'state',l:'Your state',t:'text',p:'e.g. California'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Describe your specific situation...'}],
+   buildLinks:function(a){var concern=a.concern||'';var links=[];if(concern.includes('budget')||concern.includes('Budget')){links.push({n:'CFPB Budget Tool',u:'https://www.consumerfinance.gov/consumer-tools/budget/'});links.push({n:'NerdWallet Budget Calculator',u:'https://www.nerdwallet.com/article/finance/budget-calculator'});}if(concern.includes('debt')){links.push({n:'NFCC — Free Debt Counseling',u:'https://www.nfcc.org/agency-locator/'});links.push({n:'Debt.org — Debt Relief Options',u:'https://www.debt.org/advice/how-to-get-out-of-debt/'});}if(concern.includes('assistance')){links.push({n:'Benefits.gov — Find Assistance Programs',u:'https://www.benefits.gov'});links.push({n:'211.org — Local Financial Help',u:'https://www.211.org'});links.push({n:'LIHEAP — Energy Bill Assistance',u:'https://www.acf.hhs.gov/ocs/programs/liheap'});}if(concern.includes('credit')){links.push({n:'AnnualCreditReport.com — Free Report',u:'https://www.annualcreditreport.com'});links.push({n:'Credit Karma — Free Score',u:'https://www.creditkarma.com'});}if(concern.includes('tax')||concern.includes('Tax')){links.push({n:'IRS Free File',u:'https://www.irs.gov/filing/free-file-do-your-federal-taxes-for-free'});links.push({n:'VITA — Free Tax Help Near You',u:'https://www.irs.gov/vita'});}if(concern.includes('bank')){links.push({n:'BankOn — Find a Free Bank Account',u:'https://joinbankon.org/accounts/'});}if(concern.includes('bill')||concern.includes('Saving')||concern.includes('saving')){links.push({n:'211.org — Bill Assistance',u:'https://www.211.org'});}if(links.length===0){links.push({n:'Benefits.gov',u:'https://www.benefits.gov'});links.push({n:'CFPB Financial Tools',u:'https://www.consumerfinance.gov/consumer-tools/'});}return links;}
   },
   {name:'Housing',desc:'Renting, buying, assistance',
-   questions:[
-     {id:'type',l:'Are you renting or buying?',t:'select',o:['Renting','Buying','Need emergency help','Looking for assistance']},
-     {id:'maxrent',l:'Max monthly budget',t:'text',p:'e.g. 1500'},
-     {id:'location',l:'City or zip code',t:'text',p:'e.g. Los Angeles, CA'}
-   ],
-   buildLinks:function(a){
-     var loc=encodeURIComponent(a.location||'');
-     var max=a.maxrent||'';
-     var type=a.type||'';
-     var links=[];
-     if(type==='Renting'){links.push({n:'Zillow Rentals in '+(a.location||'Your Area'),u:'https://www.zillow.com/homes/for_rent/'+loc+'_rb/?price=0-'+max});links.push({n:'Apartments.com — '+(a.location||'Your Area'),u:'https://www.apartments.com/'+loc.replace(/%20/g,'-').toLowerCase()+'/'});links.push({n:'Nolo — Tenant Rights',u:'https://www.nolo.com/legal-encyclopedia/tenant-rights'});}
-     if(type==='Buying'){links.push({n:'Zillow Homes for Sale — '+(a.location||'Your Area'),u:'https://www.zillow.com/homes/for_sale/'+loc+'_rb/'});links.push({n:'Realtor.com',u:'https://www.realtor.com/realestateandhomes-search/'+loc.replace(/%20/g,'_')});links.push({n:'HUD — First Time Buyer Help',u:'https://www.hud.gov/topics/buying_a_home'});}
-     if(type.includes('emergency')||type.includes('assistance')){links.push({n:'HUD — Housing Assistance',u:'https://www.hud.gov/topics/rental_assistance'});links.push({n:'Section 8 Voucher',u:'https://www.hud.gov/program_offices/public_indian_housing/programs/hcv'});links.push({n:'211.org — Emergency Shelter',u:'https://www.211.org'});}
-     if(links.length===0){links.push({n:'Zillow',u:'https://www.zillow.com'});links.push({n:'HUD Housing Resources',u:'https://www.hud.gov'});}
-     return links;
-   }
+   questions:[{id:'type',l:'What do you need?',t:'select',o:['Find a rental','Buy a home','Apply for housing assistance','Facing eviction','Emergency shelter','Understanding my lease','Section 8 / voucher help','Roommate search']},{id:'maxrent',l:'Max monthly budget',t:'text',p:'e.g. 1500'},{id:'location',l:'City or zip code',t:'text',p:'e.g. Los Angeles, CA'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Describe your situation...'}],
+   buildLinks:function(a){var loc=encodeURIComponent(a.location||'');var max=a.maxrent||'2000';var type=a.type||'';var locSlug=(a.location||'').toLowerCase().replace(/,/g,'').replace(/\s+/g,'-');var links=[];if(type.includes('rental')||type.includes('Rental')){links.push({n:'Zillow Rentals — '+(a.location||'Your Area')+' under $'+max,u:'https://www.zillow.com/homes/for_rent/'+loc+'_rb/?price=0-'+max});links.push({n:'Apartments.com — '+(a.location||'Your Area'),u:'https://www.apartments.com/'+locSlug+'/'});links.push({n:'Trulia Rentals',u:'https://www.trulia.com/for_rent/'+loc+'_zm/'+max+'p_price/'});}if(type.includes('Buy')||type.includes('home')){links.push({n:'Zillow Homes for Sale — '+(a.location||'Your Area'),u:'https://www.zillow.com/homes/for_sale/'+loc+'_rb/'});links.push({n:'Realtor.com',u:'https://www.realtor.com/realestateandhomes-search/'+loc.replace(/%20/g,'_')});links.push({n:'HUD — First Time Homebuyer Help',u:'https://www.hud.gov/topics/buying_a_home'});}if(type.includes('assistance')||type.includes('Section 8')||type.includes('voucher')){links.push({n:'HUD — Rental Assistance Programs',u:'https://www.hud.gov/topics/rental_assistance'});links.push({n:'Section 8 Housing Choice Voucher',u:'https://www.hud.gov/program_offices/public_indian_housing/programs/hcv'});links.push({n:'211.org — Housing Help Near You',u:'https://www.211.org'});}if(type.includes('eviction')||type.includes('Eviction')){links.push({n:'LawHelp.org — Eviction Help',u:'https://www.lawhelp.org'});links.push({n:'HUD — Eviction Prevention',u:'https://www.hud.gov/topics/rental_assistance'});}if(type.includes('shelter')||type.includes('Shelter')){links.push({n:'211.org — Emergency Shelter Near You',u:'https://www.211.org'});links.push({n:'Homeless Shelter Directory',u:'https://www.homelessshelterdirectory.org'});}if(type.includes('lease')||type.includes('Lease')){links.push({n:'Nolo — Understand Your Lease',u:'https://www.nolo.com/legal-encyclopedia/tenant-rights'});}if(links.length===0){links.push({n:'Zillow',u:'https://www.zillow.com'});links.push({n:'HUD Housing Resources',u:'https://www.hud.gov'});}return links;}
   },
   {name:'Health',desc:'Medical, mental health, care',
-   questions:[
-     {id:'need',l:'What do you need help with?',t:'select',o:['Find a doctor','Mental health support','Prescription help','Dental care','Emergency care','Health insurance']},
-     {id:'insurance',l:'Do you have insurance?',t:'select',o:['Yes','No','Not sure']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. Texas'}
-   ],
-   buildLinks:function(a){
-     var need=a.need||'';var ins=a.insurance||'';var links=[];
-     if(need.includes('doctor')||need.includes('insurance')||ins==='No'){links.push({n:'HealthCare.gov — Get Coverage',u:'https://www.healthcare.gov'});links.push({n:'HRSA — Free Health Center',u:'https://findahealthcenter.hrsa.gov'});}
-     if(need.includes('Mental')||need.includes('mental')){links.push({n:'SAMHSA Helpline',u:'https://www.samhsa.gov/find-help/national-helpline'});links.push({n:'Open Path — Affordable Therapy',u:'https://openpathcollective.org'});links.push({n:'988 Lifeline',u:'https://988lifeline.org'});}
-     if(need.includes('Prescription')){links.push({n:'NeedyMeds',u:'https://www.needymeds.org'});links.push({n:'GoodRx',u:'https://www.goodrx.com'});}
-     if(need.includes('Dental')){links.push({n:'HRSA Dental Clinic Finder',u:'https://findahealthcenter.hrsa.gov'});links.push({n:'DentaQuest',u:'https://dentaquest.com'});}
-     if(need.includes('Emergency')){links.push({n:'Find ER Near You',u:'https://www.google.com/maps/search/emergency+room+near+me'});}
-     if(links.length===0){links.push({n:'HealthCare.gov',u:'https://www.healthcare.gov'});links.push({n:'HRSA Health Center Finder',u:'https://findahealthcenter.hrsa.gov'});}
-     return links;
-   }
+   questions:[{id:'need',l:'What do you need help with?',t:'select',o:['Find a doctor or clinic','Mental health support','Prescription help','Dental care','Vision care','Emergency care','Health insurance','Pregnancy & maternal care','Chronic condition help','Substance abuse help']},{id:'insurance',l:'Do you have insurance?',t:'select',o:['Yes — need help using it','No — need free/low cost care','On Medicaid','On Medicare','Not sure']},{id:'state',l:'Your state',t:'text',p:'e.g. Texas'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Describe your health situation...'}],
+   buildLinks:function(a){var need=a.need||'';var ins=a.insurance||'';var links=[];if(need.includes('doctor')||need.includes('clinic')||ins.includes('No')){links.push({n:'HRSA — Find Free Health Center Near You',u:'https://findahealthcenter.hrsa.gov'});links.push({n:'HealthCare.gov — Get Coverage',u:'https://www.healthcare.gov'});}if(need.includes('Mental')||need.includes('mental')){links.push({n:'SAMHSA — Mental Health Helpline',u:'https://www.samhsa.gov/find-help/national-helpline'});links.push({n:'Open Path — Affordable Therapy $30-$80',u:'https://openpathcollective.org'});links.push({n:'988 Suicide & Crisis Lifeline',u:'https://988lifeline.org'});links.push({n:'Psychology Today — Find a Therapist',u:'https://www.psychologytoday.com/us/therapists'});}if(need.includes('Prescription')){links.push({n:'NeedyMeds — Free Prescription Help',u:'https://www.needymeds.org'});links.push({n:'GoodRx — Compare Drug Prices',u:'https://www.goodrx.com'});}if(need.includes('Dental')){links.push({n:'HRSA — Find Dental Clinic Near You',u:'https://findahealthcenter.hrsa.gov'});links.push({n:'Dental Lifeline Network',u:'https://dentallifeline.org'});}if(need.includes('Vision')){links.push({n:'VSP Eyes of Hope — Free Eye Care',u:'https://www.vsp.com/eyecare-wellness/eyes-of-hope'});links.push({n:'EyeCare America — Free Exams',u:'https://www.aao.org/eyecare-america'});}if(need.includes('Emergency')){links.push({n:'Find Emergency Room Near You',u:'https://www.google.com/maps/search/emergency+room+near+me'});}if(need.includes('insurance')||ins.includes('No')){links.push({n:'HealthCare.gov — Marketplace Plans',u:'https://www.healthcare.gov/see-plans/'});links.push({n:'Medicaid — Check Eligibility',u:'https://www.medicaid.gov/medicaid/eligibility/index.html'});}if(need.includes('Pregnancy')){links.push({n:'WIC — Pregnancy & Maternal Help',u:'https://www.fns.usda.gov/wic'});}if(need.includes('Substance')){links.push({n:'SAMHSA — Find Treatment Near You',u:'https://findtreatment.samhsa.gov'});}if(links.length===0){links.push({n:'HealthCare.gov',u:'https://www.healthcare.gov'});links.push({n:'HRSA Health Center Finder',u:'https://findahealthcenter.hrsa.gov'});}return links;}
   },
   {name:'Jobs & Career',desc:'Resume, jobs, rights',
-   questions:[
-     {id:'need',l:'What do you need?',t:'select',o:['Find a job','Build my resume','Job training','Know my rights','File for unemployment']},
-     {id:'field',l:'Field or job type',t:'text',p:'e.g. Healthcare, Trades, Tech'},
-     {id:'location',l:'City or zip code',t:'text',p:'e.g. Chicago, IL'}
-   ],
-   buildLinks:function(a){
-     var loc=encodeURIComponent(a.location||'');var field=encodeURIComponent(a.field||'jobs');var need=a.need||'';var links=[];
-     if(need.includes('Find')||need.includes('job')){links.push({n:'Indeed — '+(a.field||'Jobs')+' in '+(a.location||'Your Area'),u:'https://www.indeed.com/jobs?q='+field+'&l='+loc});links.push({n:'LinkedIn Jobs',u:'https://www.linkedin.com/jobs/search/?keywords='+field+'&location='+loc});}
-     if(need.includes('resume')||need.includes('Resume')){links.push({n:'Indeed Resume Builder',u:'https://www.indeed.com/create-resume'});links.push({n:'Zety Resume Tips',u:'https://zety.com/resume-builder'});}
-     if(need.includes('training')){links.push({n:'CareerOneStop Training',u:'https://www.careeronestop.org/LocalHelp/service-locator.aspx'});links.push({n:'Goodwill Job Training',u:'https://www.goodwill.org/jobs-training/'});}
-     if(need.includes('rights')){links.push({n:'DOL Worker Rights',u:'https://www.dol.gov/general/topic/wages'});links.push({n:'EEOC — Workplace Help',u:'https://www.eeoc.gov/filing-charge-discrimination'});}
-     if(need.includes('unemployment')){links.push({n:'File for Unemployment',u:'https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx?location='+loc});}
-     if(links.length===0){links.push({n:'Indeed Job Search',u:'https://www.indeed.com/jobs?q='+field+'&l='+loc});links.push({n:'CareerOneStop',u:'https://www.careeronestop.org'});}
-     return links;
-   }
+   questions:[{id:'need',l:'What do you need?',t:'select',o:['Find a job','Build or update my resume','Job training or education','Know my employee rights','File for unemployment','Start a business','Find remote work','Career change help','Work permit or visa help']},{id:'field',l:'Field or job type',t:'text',p:'e.g. Healthcare, Construction, Tech, Retail'},{id:'location',l:'City or zip code',t:'text',p:'e.g. Chicago, IL'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Describe your situation...'}],
+   buildLinks:function(a){var loc=encodeURIComponent(a.location||'');var field=encodeURIComponent(a.field||'jobs');var need=a.need||'';var links=[];if(need.includes('Find')||need.includes('job')){links.push({n:'Indeed — '+(a.field||'Jobs')+' in '+(a.location||'Your Area'),u:'https://www.indeed.com/jobs?q='+field+'&l='+loc});links.push({n:'LinkedIn Jobs',u:'https://www.linkedin.com/jobs/search/?keywords='+field+'&location='+loc});links.push({n:'ZipRecruiter',u:'https://www.ziprecruiter.com/candidate/search?search='+field+'&location='+loc});}if(need.includes('resume')||need.includes('Resume')){links.push({n:'Indeed — Free Resume Builder',u:'https://www.indeed.com/create-resume'});links.push({n:'Canva — Free Resume Templates',u:'https://www.canva.com/resumes/templates/'});}if(need.includes('training')||need.includes('Training')){links.push({n:'CareerOneStop — Job Training',u:'https://www.careeronestop.org/LocalHelp/service-locator.aspx'});links.push({n:'Google Career Certificates — Free',u:'https://grow.google/certificates/'});}if(need.includes('rights')||need.includes('Rights')){links.push({n:'DOL — Know Your Worker Rights',u:'https://www.dol.gov/general/topic/wages'});links.push({n:'EEOC — Workplace Discrimination',u:'https://www.eeoc.gov/filing-charge-discrimination'});}if(need.includes('unemployment')){links.push({n:'CareerOneStop — File for Unemployment',u:'https://www.careeronestop.org/LocalHelp/UnemploymentBenefits/find-unemployment-benefits.aspx?location='+loc});}if(need.includes('remote')||need.includes('Remote')){links.push({n:'Remote.co — Remote Jobs',u:'https://remote.co/remote-jobs/'});links.push({n:'We Work Remotely',u:'https://weworkremotely.com'});}if(need.includes('business')||need.includes('Business')){links.push({n:'SBA — Start a Small Business',u:'https://www.sba.gov/business-guide/10-steps-start-your-business'});links.push({n:'SCORE — Free Business Mentoring',u:'https://www.score.org'});}if(links.length===0){links.push({n:'Indeed Job Search',u:'https://www.indeed.com/jobs?q='+field+'&l='+loc});links.push({n:'CareerOneStop',u:'https://www.careeronestop.org'});}return links;}
   },
   {name:'Legal & Rights',desc:'Know your rights',
-   questions:[
-     {id:'issue',l:'What is the legal issue?',t:'select',o:['Tenant rights','Employment','Immigration','Family law','Criminal','Consumer rights']},
-     {id:'lawyer',l:'Do you have a lawyer?',t:'select',o:['No — need free help','Yes','Looking for options']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. Florida'}
-   ],
-   buildLinks:function(a){
-     var state=encodeURIComponent(a.state||'');var issue=a.issue||'';var links=[];
-     links.push({n:'LawHelp.org — Free Legal Aid',u:'https://www.lawhelp.org/find-legal-help?states='+state});
-     if(issue.includes('Tenant')){links.push({n:'Nolo Tenant Rights',u:'https://www.nolo.com/legal-encyclopedia/tenant-rights'});}
-     if(issue.includes('Employment')){links.push({n:'EEOC — File Complaint',u:'https://www.eeoc.gov/filing-charge-discrimination'});}
-     if(issue.includes('Immigration')){links.push({n:'ILRC Immigration Help',u:'https://www.ilrc.org'});links.push({n:'ACLU Immigrant Rights',u:'https://www.aclu.org/know-your-rights/immigrants-rights'});}
-     if(issue.includes('Family')){links.push({n:'Family Law Help',u:'https://www.lawhelp.org/find-legal-help'});}
-     if(issue.includes('Criminal')){links.push({n:'ACLU Know Your Rights',u:'https://www.aclu.org/know-your-rights/stopped-by-police'});}
-     if(issue.includes('Consumer')){links.push({n:'CFPB Complaint Portal',u:'https://www.consumerfinance.gov/complaint/'});links.push({n:'FTC Report Fraud',u:'https://reportfraud.ftc.gov'});}
-     return links;
-   }
+   questions:[{id:'issue',l:'What is the legal issue?',t:'select',o:['Tenant & housing rights','Employment rights','Immigration & visa','Family law & divorce','Criminal defense','Consumer rights','Disability rights','Domestic violence','Small claims court','Expungement & records']},{id:'lawyer',l:'Do you have a lawyer?',t:'select',o:['No — need free help','Looking for affordable options','Yes — need more info']},{id:'state',l:'Your state',t:'text',p:'e.g. Florida'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Describe your legal situation...'}],
+   buildLinks:function(a){var state=encodeURIComponent(a.state||'');var issue=a.issue||'';var links=[];links.push({n:'LawHelp.org — Free Legal Aid in '+(a.state||'Your State'),u:'https://www.lawhelp.org/find-legal-help?states='+state});if(issue.includes('Tenant')){links.push({n:'Nolo — Tenant Rights',u:'https://www.nolo.com/legal-encyclopedia/tenant-rights'});}if(issue.includes('Employment')){links.push({n:'EEOC — File Employment Complaint',u:'https://www.eeoc.gov/filing-charge-discrimination'});}if(issue.includes('Immigration')){links.push({n:'ILRC — Immigration Legal Help',u:'https://www.ilrc.org'});links.push({n:'ACLU — Immigrant Rights',u:'https://www.aclu.org/know-your-rights/immigrants-rights'});}if(issue.includes('Family')||issue.includes('divorce')){links.push({n:'WomensLaw.org — Family Law Help',u:'https://www.womenslaw.org'});}if(issue.includes('Criminal')){links.push({n:'ACLU — Know Your Rights',u:'https://www.aclu.org/know-your-rights/stopped-by-police'});}if(issue.includes('Consumer')){links.push({n:'CFPB — File a Consumer Complaint',u:'https://www.consumerfinance.gov/complaint/'});links.push({n:'FTC — Report Fraud',u:'https://reportfraud.ftc.gov'});}if(issue.includes('Domestic')){links.push({n:'National DV Hotline — 1-800-799-7233',u:'https://www.thehotline.org'});}if(issue.includes('Small claims')){links.push({n:'Nolo — Small Claims Court Guide',u:'https://www.nolo.com/legal-encyclopedia/small-claims-court'});}if(issue.includes('Expungement')){links.push({n:'Clean Slate Clearinghouse',u:'https://cleanslateworks.org'});}return links;}
   },
   {name:'Education',desc:'Learning, aid, skills',
-   questions:[
-     {id:'goal',l:'Education goal',t:'select',o:['Get my GED','Start or go back to college','Learn a new skill','Financial aid help','Help my child learn']},
-     {id:'budget',l:'Budget',t:'select',o:['Free only','Under $500','$500–$2,000','No limit']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. New York'}
-   ],
-   buildLinks:function(a){
-     var goal=a.goal||'';var links=[];
-     if(goal.includes('GED')){links.push({n:'GED.com',u:'https://ged.com'});links.push({n:'Khan Academy GED Prep',u:'https://www.khanacademy.org/test-prep/ged'});}
-     if(goal.includes('college')||goal.includes('College')){links.push({n:'FAFSA Financial Aid',u:'https://studentaid.gov/h/apply-for-aid/fafsa'});links.push({n:'Fastweb Scholarships',u:'https://www.fastweb.com'});}
-     if(goal.includes('skill')||goal.includes('Skill')){links.push({n:'Coursera Free Courses',u:'https://www.coursera.org/courses?query=free'});links.push({n:'Khan Academy',u:'https://www.khanacademy.org'});}
-     if(goal.includes('Financial')){links.push({n:'FAFSA',u:'https://studentaid.gov/h/apply-for-aid/fafsa'});links.push({n:'Fastweb',u:'https://www.fastweb.com'});}
-     if(goal.includes('child')||goal.includes('Child')){links.push({n:'Khan Academy Kids',u:'https://www.khanacademy.org/khan-academy-kids'});links.push({n:'PBS Kids',u:'https://pbskids.org'});}
-     if(links.length===0){links.push({n:'Khan Academy',u:'https://www.khanacademy.org'});links.push({n:'FAFSA',u:'https://studentaid.gov'});}
-     return links;
-   }
+   questions:[{id:'goal',l:'Education goal',t:'select',o:['Get my GED','Start or return to college','Learn a new skill or trade','Get financial aid','Help my child with school','Adult education & literacy','Learn English (ESL)','Vocational or trade school','Online learning']},{id:'budget',l:'Budget for education',t:'select',o:['Free only','Under $500','$500–$2,000','No limit']},{id:'state',l:'Your state',t:'text',p:'e.g. New York'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more about your goals...'}],
+   buildLinks:function(a){var goal=a.goal||'';var links=[];if(goal.includes('GED')){links.push({n:'GED.com — Start Your GED',u:'https://ged.com'});links.push({n:'Khan Academy — Free GED Prep',u:'https://www.khanacademy.org/test-prep/ged'});links.push({n:'GED Testing Centers Near You',u:'https://ged.com/locate-test-center/'});}if(goal.includes('college')||goal.includes('College')||goal.includes('return')){links.push({n:'FAFSA — Apply for Financial Aid',u:'https://studentaid.gov/h/apply-for-aid/fafsa'});links.push({n:'CollegeBoard — Search Colleges',u:'https://bigfuture.collegeboard.org/college-search'});links.push({n:'Fastweb — Find Scholarships',u:'https://www.fastweb.com'});}if(goal.includes('skill')||goal.includes('trade')||goal.includes('Vocational')){links.push({n:'Coursera — Free Online Courses',u:'https://www.coursera.org/courses?query=free'});links.push({n:'CareerOneStop — Trade School Finder',u:'https://www.careeronestop.org/toolkit/training/find-vocational-schools.aspx'});}if(goal.includes('Financial')||goal.includes('financial aid')){links.push({n:'FAFSA',u:'https://studentaid.gov/h/apply-for-aid/fafsa'});links.push({n:'Scholarships.com',u:'https://www.scholarships.com'});}if(goal.includes('child')||goal.includes('Child')){links.push({n:'Khan Academy Kids',u:'https://www.khanacademy.org/khan-academy-kids'});links.push({n:'PBS Kids — Free Learning',u:'https://pbskids.org'});}if(goal.includes('ESL')||goal.includes('English')){links.push({n:'USA Learns — Free ESL',u:'https://www.usalearns.org'});}if(goal.includes('Online')||goal.includes('online')){links.push({n:'edX — Free Online Courses',u:'https://www.edx.org/search?q=free'});}if(links.length===0){links.push({n:'Khan Academy',u:'https://www.khanacademy.org'});links.push({n:'FAFSA',u:'https://studentaid.gov'});}return links;}
   },
   {name:'Food & Nutrition',desc:'Food banks, SNAP, tips',
-   questions:[
-     {id:'need',l:'What do you need?',t:'select',o:['Find a food bank','Apply for SNAP','WIC program','Eat healthy on budget','Free meals for kids']},
-     {id:'size',l:'Household size',t:'select',o:['1 person','2 people','3–4 people','5+ people']},
-     {id:'location',l:'City or zip code',t:'text',p:'e.g. Houston, TX'}
-   ],
-   buildLinks:function(a){
-     var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];
-     if(need.includes('food bank')||need.includes('Food bank')){links.push({n:'Feeding America — Find Food Bank',u:'https://www.feedingamerica.org/find-your-local-foodbank'});links.push({n:'211.org Local Food',u:'https://www.211.org'});}
-     if(need.includes('SNAP')){links.push({n:'USDA SNAP Apply',u:'https://www.fns.usda.gov/snap/recipient/eligibility'});links.push({n:'Benefits.gov SNAP',u:'https://www.benefits.gov/benefit/361'});}
-     if(need.includes('WIC')){links.push({n:'WIC Program Apply',u:'https://www.fns.usda.gov/wic/wic-how-apply'});}
-     if(need.includes('budget')||need.includes('Budget')){links.push({n:'USDA MyPlate Budget Tips',u:'https://www.myplate.gov/eat-healthy/budget-friendly'});links.push({n:'Budget Bytes Recipes',u:'https://www.budgetbytes.com'});}
-     if(need.includes('kids')||need.includes('Kids')){links.push({n:'USDA Free Summer Meals',u:'https://www.fns.usda.gov/sfsp/summer-food-service-program'});links.push({n:'No Kid Hungry',u:'https://www.nokidhungry.org/find-free-meals'});}
-     if(links.length===0){links.push({n:'Feeding America',u:'https://www.feedingamerica.org/find-your-local-foodbank'});links.push({n:'USDA SNAP',u:'https://www.fns.usda.gov/snap/recipient/eligibility'});}
-     return links;
-   }
+   questions:[{id:'need',l:'What do you need?',t:'select',o:['Find a food bank near me','Apply for SNAP benefits','WIC program','Free meals for kids','Eat healthy on a budget','Senior meal programs','Food for people experiencing homelessness','Food delivery assistance']},{id:'size',l:'Household size',t:'select',o:['Just me','2 people','3–4 people','5–6 people','7+ people']},{id:'location',l:'City or zip code',t:'text',p:'e.g. Houston, TX'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];if(need.includes('food bank')||need.includes('Food bank')){links.push({n:'Feeding America — Find Food Bank Near '+(a.location||'You'),u:'https://www.feedingamerica.org/find-your-local-foodbank'});links.push({n:'FoodPantries.org — Near You',u:'https://www.foodpantries.org'});links.push({n:'211.org — Local Food Resources',u:'https://www.211.org'});}if(need.includes('SNAP')){links.push({n:'USDA SNAP — Check Eligibility & Apply',u:'https://www.fns.usda.gov/snap/recipient/eligibility'});links.push({n:'Benefits.gov — Apply for SNAP',u:'https://www.benefits.gov/benefit/361'});}if(need.includes('WIC')){links.push({n:'WIC Program — Apply Now',u:'https://www.fns.usda.gov/wic/wic-how-apply'});}if(need.includes('kids')||need.includes('Kids')){links.push({n:'USDA — Free Summer Meals for Kids',u:'https://www.fns.usda.gov/sfsp/summer-food-service-program'});links.push({n:'No Kid Hungry — Find Free Meals',u:'https://www.nokidhungry.org/find-free-meals'});}if(need.includes('budget')||need.includes('Budget')){links.push({n:'USDA MyPlate — Budget-Friendly Eating',u:'https://www.myplate.gov/eat-healthy/budget-friendly'});links.push({n:'Budget Bytes — Cheap Healthy Recipes',u:'https://www.budgetbytes.com'});}if(need.includes('Senior')||need.includes('senior')){links.push({n:'Meals on Wheels — Senior Meal Delivery',u:'https://www.mealsonwheelsamerica.org/find-meals'});}if(need.includes('homeless')||need.includes('Homeless')){links.push({n:'Salvation Army — Food Services',u:'https://www.salvationarmyusa.org'});}if(links.length===0){links.push({n:'Feeding America',u:'https://www.feedingamerica.org/find-your-local-foodbank'});links.push({n:'USDA SNAP',u:'https://www.fns.usda.gov/snap/recipient/eligibility'});}return links;}
   },
-  {name:'Family & Parenting',desc:'Parenting, support',
-   questions:[
-     {id:'need',l:'What do you need help with?',t:'select',o:['Child care','Domestic violence help','Child support','Parenting resources','Financial help for family']},
-     {id:'ages',l:'Children ages',t:'select',o:['0–2 years','3–5 years','6–12 years','13–17 years','Multiple ages']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. Georgia'}
-   ],
-   buildLinks:function(a){
-     var need=a.need||'';var links=[];
-     if(need.includes('Child care')){links.push({n:'Childcare.gov',u:'https://childcare.gov'});links.push({n:'ACF Child Care Assistance',u:'https://www.acf.hhs.gov/occ/map/occ-map-state-home.htm'});}
-     if(need.includes('Domestic')||need.includes('violence')){links.push({n:'National DV Hotline 1-800-799-7233',u:'https://www.thehotline.org'});links.push({n:'Safe Horizon',u:'https://www.safehorizon.org'});}
-     if(need.includes('Child support')){links.push({n:'ACF Child Support',u:'https://www.acf.hhs.gov/css/resource/state-and-tribal-child-support-agency-contacts'});}
-     if(need.includes('Parenting')){links.push({n:'Zero to Three',u:'https://www.zerotothree.org/parenting/'});links.push({n:'CDC Child Development',u:'https://www.cdc.gov/child-development'});}
-     if(need.includes('Financial')){links.push({n:'Benefits.gov Family Programs',u:'https://www.benefits.gov'});links.push({n:'ACF TANF Assistance',u:'https://www.acf.hhs.gov/ofa/programs/tanf'});}
-     if(links.length===0){links.push({n:'Childcare.gov',u:'https://childcare.gov'});links.push({n:'Benefits.gov',u:'https://www.benefits.gov'});}
-     return links;
-   }
+  {name:'Family & Parenting',desc:'Parenting, support, family',
+   questions:[{id:'need',l:'What do you need help with?',t:'select',o:['Child care assistance','Domestic violence support','Child support help','Parenting resources & tips','Family financial assistance','Foster care information','Adoption resources','Single parent support','Elder care for a parent']},{id:'ages',l:'Children ages',t:'select',o:['0–2 years','3–5 years','6–12 years','13–17 years','18+ / adult children','No children','Multiple ages']},{id:'state',l:'Your state',t:'text',p:'e.g. Georgia'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more about your situation...'}],
+   buildLinks:function(a){var need=a.need||'';var links=[];if(need.includes('Child care')){links.push({n:'Childcare.gov — Find Child Care Help',u:'https://childcare.gov'});links.push({n:'Care.com — Find Child Care',u:'https://www.care.com'});}if(need.includes('Domestic')||need.includes('violence')){links.push({n:'National DV Hotline — 1-800-799-7233',u:'https://www.thehotline.org'});links.push({n:'Safe Horizon — DV Support',u:'https://www.safehorizon.org'});links.push({n:'211.org — Local Shelter',u:'https://www.211.org'});}if(need.includes('Child support')){links.push({n:'ACF — Child Support by State',u:'https://www.acf.hhs.gov/css/resource/state-and-tribal-child-support-agency-contacts'});}if(need.includes('Parenting')){links.push({n:'Zero to Three — Parenting Tips',u:'https://www.zerotothree.org/parenting/'});links.push({n:'CDC — Child Development',u:'https://www.cdc.gov/child-development'});}if(need.includes('financial')||need.includes('Financial')){links.push({n:'Benefits.gov — Family Assistance',u:'https://www.benefits.gov'});links.push({n:'ACF — TANF Cash Assistance',u:'https://www.acf.hhs.gov/ofa/programs/tanf'});}if(need.includes('Foster')||need.includes('Adoption')){links.push({n:'AdoptUSKids — Foster & Adopt',u:'https://www.adoptuskids.org'});}if(need.includes('Single parent')){links.push({n:'Benefits.gov — Single Parent Help',u:'https://www.benefits.gov'});}if(need.includes('Elder care')){links.push({n:'Eldercare Locator — Find Services',u:'https://eldercare.acl.gov'});links.push({n:'AARP — Caregiver Resources',u:'https://www.aarp.org/caregiving/'});}if(links.length===0){links.push({n:'Childcare.gov',u:'https://childcare.gov'});links.push({n:'Benefits.gov',u:'https://www.benefits.gov'});}return links;}
   },
   {name:'Tech Help',desc:'Devices, internet, safety',
-   questions:[
-     {id:'need',l:'What do you need help with?',t:'select',o:['Get low-cost internet','Learn to use a device','Stay safe online','Avoid scams','Free tech training']},
-     {id:'device',l:'Device type',t:'select',o:['Smartphone','Computer or laptop','Tablet','Not sure']},
-     {id:'location',l:'City or zip code',t:'text',p:'e.g. Miami, FL'}
-   ],
-   buildLinks:function(a){
-     var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];
-     if(need.includes('internet')){links.push({n:'FCC Affordable Connectivity',u:'https://www.fcc.gov/acp'});links.push({n:'EveryoneOn Low-Cost Internet',u:'https://www.everyoneon.org/find-offers?zip='+loc});}
-     if(need.includes('device')||need.includes('Learn')){links.push({n:'DigitalLearn.org Free Training',u:'https://digitallearn.org'});links.push({n:'GCFGlobal Tech Tutorials',u:'https://edu.gcfglobal.org/en/topics/technology/'});}
-     if(need.includes('safe')){links.push({n:'StaySafeOnline.org',u:'https://staysafeonline.org'});links.push({n:'FTC Privacy Guide',u:'https://consumer.ftc.gov/identity-theft-and-online-security'});}
-     if(need.includes('scam')||need.includes('Scam')){links.push({n:'FTC Report Scams',u:'https://consumer.ftc.gov/scams'});links.push({n:'AARP Fraud Watch',u:'https://www.aarp.org/money/scams-fraud/'});}
-     if(need.includes('training')){links.push({n:'DigitalLearn.org',u:'https://digitallearn.org'});links.push({n:'GCFGlobal Computer Basics',u:'https://edu.gcfglobal.org/en/computerbasics/'});}
-     if(links.length===0){links.push({n:'DigitalLearn.org',u:'https://digitallearn.org'});links.push({n:'FCC Affordable Internet',u:'https://www.fcc.gov/acp'});}
-     return links;
-   }
+   questions:[{id:'need',l:'What do you need help with?',t:'select',o:['Get free or low-cost internet','Learn to use a smartphone','Learn to use a computer','Stay safe online','Avoid scams & fraud','Free tech training','Get a free or low-cost device','Protect my privacy online']},{id:'device',l:'Device type',t:'select',o:['Smartphone (iPhone)','Smartphone (Android)','Windows computer','Mac computer','Tablet','Not sure']},{id:'location',l:'City or zip code',t:'text',p:'e.g. Miami, FL'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];if(need.includes('internet')){links.push({n:'FCC — Affordable Connectivity Program',u:'https://www.fcc.gov/acp'});links.push({n:'EveryoneOn — Low-Cost Internet Near You',u:'https://www.everyoneon.org/find-offers?zip='+loc});links.push({n:'Xfinity Internet Essentials',u:'https://www.xfinity.com/internet-essentials'});}if(need.includes('smartphone')||need.includes('phone')){links.push({n:'GCFGlobal — How to Use a Smartphone',u:'https://edu.gcfglobal.org/en/smartphone-basics/'});links.push({n:'DigitalLearn.org — Phone Training',u:'https://digitallearn.org'});}if(need.includes('computer')){links.push({n:'GCFGlobal — Computer Basics',u:'https://edu.gcfglobal.org/en/computerbasics/'});links.push({n:'DigitalLearn.org — Free Training',u:'https://digitallearn.org'});}if(need.includes('safe')||need.includes('privacy')){links.push({n:'StaySafeOnline.org',u:'https://staysafeonline.org'});links.push({n:'FTC — Protect Your Privacy',u:'https://consumer.ftc.gov/identity-theft-and-online-security'});}if(need.includes('scam')||need.includes('fraud')){links.push({n:'FTC — Report & Avoid Scams',u:'https://consumer.ftc.gov/scams'});links.push({n:'AARP Fraud Watch Network',u:'https://www.aarp.org/money/scams-fraud/'});}if(need.includes('device')||need.includes('Device')){links.push({n:'PCs for People — Low Cost Devices',u:'https://www.pcsforpeople.org'});links.push({n:'Human-I-T — Free Devices',u:'https://www.human-i-t.org'});}if(links.length===0){links.push({n:'DigitalLearn.org',u:'https://digitallearn.org'});links.push({n:'FCC Affordable Internet',u:'https://www.fcc.gov/acp'});}return links;}
   },
   {name:'Transportation',desc:'Rides, transit, assistance',
-   questions:[
-     {id:'need',l:'What do you need?',t:'select',o:['Daily commute help','Medical appointment rides','Car assistance program','Disability transportation','Public transit info']},
-     {id:'car',l:'Do you have a car?',t:'select',o:['Yes','No','Car needs repair']},
-     {id:'location',l:'City or zip code',t:'text',p:'e.g. Denver, CO'}
-   ],
-   buildLinks:function(a){
-     var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];
-     if(need.includes('commute')||need.includes('transit')){links.push({n:'Google Maps Transit — '+(a.location||'Your Area'),u:'https://www.google.com/maps/dir/?api=1&travelmode=transit&destination='+loc});links.push({n:'Transit App',u:'https://transitapp.com'});}
-     if(need.includes('Medical')){links.push({n:'211.org Medical Transport',u:'https://www.211.org'});links.push({n:'Eldercare Locator Rides',u:'https://eldercare.acl.gov'});}
-     if(need.includes('Car')||a.car==='Car needs repair'){links.push({n:'Ways to Work Car Loans',u:'https://www.waystowork.org'});links.push({n:'Good News Garage',u:'https://goodnewsgarage.org'});}
-     if(need.includes('Disability')){links.push({n:'ADA Paratransit Rights',u:'https://www.ada.gov/topics/transportation/'});}
-     if(links.length===0){links.push({n:'211.org Transportation',u:'https://www.211.org'});links.push({n:'Google Maps',u:'https://maps.google.com'});}
-     return links;
-   }
+   questions:[{id:'need',l:'What do you need?',t:'select',o:['Daily commute help','Medical appointment rides','Car assistance or loans','Car repair help','Disability transportation','Public transit directions','Free or low-cost rides','Bike share programs']},{id:'car',l:'Do you have a car?',t:'select',o:['Yes — working fine','Yes — needs repair','No car','No license']},{id:'location',l:'City or zip code',t:'text',p:'e.g. Denver, CO'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];if(need.includes('commute')||need.includes('transit')||need.includes('directions')){links.push({n:'Google Maps — Transit Directions',u:'https://www.google.com/maps/dir/?api=1&travelmode=transit&destination='+loc});links.push({n:'Transit App — Real-Time Transit',u:'https://transitapp.com'});}if(need.includes('Medical')){links.push({n:'211.org — Medical Transportation',u:'https://www.211.org'});links.push({n:'Eldercare Locator — Ride Services',u:'https://eldercare.acl.gov'});}if(need.includes('Car assistance')||need.includes('loans')||a.car==='No car'){links.push({n:'Ways to Work — Affordable Car Loans',u:'https://www.waystowork.org'});links.push({n:'Good News Garage — Free Car Help',u:'https://goodnewsgarage.org'});}if(need.includes('repair')||a.car.includes('repair')){links.push({n:'Good News Garage — Car Repair',u:'https://goodnewsgarage.org'});links.push({n:'211.org — Car Repair Help',u:'https://www.211.org'});}if(need.includes('Disability')){links.push({n:'ADA — Paratransit Rights',u:'https://www.ada.gov/topics/transportation/'});}if(need.includes('Free')||need.includes('low-cost')){links.push({n:'211.org — Free Rides Near You',u:'https://www.211.org'});}if(links.length===0){links.push({n:'211.org Transportation',u:'https://www.211.org'});links.push({n:'Google Maps Transit',u:'https://maps.google.com'});}return links;}
   },
-  {name:'Mental Health',desc:'Support & wellbeing',
-   questions:[
-     {id:'situation',l:'What are you dealing with?',t:'select',o:['Anxiety or stress','Depression','Grief or loss','Crisis or emergency','General support']},
-     {id:'crisis',l:'Are you currently in crisis?',t:'select',o:['No','Yes — need immediate help','Not sure']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. Washington'}
-   ],
-   buildLinks:function(a){
-     var crisis=a.crisis||'';var situation=a.situation||'';var links=[];
-     if(crisis==='Yes — need immediate help'||crisis==='Not sure'){links.push({n:'988 Lifeline — Call or Text 988 NOW',u:'https://988lifeline.org'});links.push({n:'Crisis Text Line — Text HOME to 741741',u:'https://www.crisistextline.org'});}
-     if(situation.includes('Anxiety')||situation.includes('stress')){links.push({n:'ADAA Anxiety Resources',u:'https://adaa.org/understanding-anxiety'});links.push({n:'Calm App',u:'https://www.calm.com'});}
-     if(situation.includes('Depression')){links.push({n:'NIMH Depression Help',u:'https://www.nimh.nih.gov/health/topics/depression'});links.push({n:'SAMHSA Treatment Locator',u:'https://findtreatment.samhsa.gov'});}
-     if(situation.includes('Grief')){links.push({n:'GriefShare Support Groups',u:'https://www.griefshare.org/groups'});}
-     links.push({n:'Open Path — Affordable Therapy',u:'https://openpathcollective.org'});
-     return links;
-   }
+  {name:'Mental Health',desc:'Support, crisis, wellbeing',
+   questions:[{id:'situation',l:'What are you dealing with?',t:'select',o:['Anxiety or stress','Depression','Grief or loss','Trauma or PTSD','Crisis or suicidal thoughts','Loneliness or isolation','Anger management','Addiction & recovery','General mental wellness']},{id:'crisis',l:'Are you currently in crisis?',t:'select',o:['No','Yes — need immediate help','Not sure — I might be']},{id:'support',l:'What kind of support do you want?',t:'select',o:['Talk to someone now','Find a therapist','Online resources & tools','Support groups','Crisis resources']},{id:'state',l:'Your state',t:'text',p:'e.g. Washington'}],
+   buildLinks:function(a){var crisis=a.crisis||'';var situation=a.situation||'';var support=a.support||'';var links=[];if(crisis==='Yes — need immediate help'||crisis==='Not sure — I might be'||situation.includes('Crisis')||situation.includes('suicidal')){links.push({n:'988 Lifeline — Call or Text 988 NOW',u:'https://988lifeline.org'});links.push({n:'Crisis Text Line — Text HOME to 741741',u:'https://www.crisistextline.org'});}if(situation.includes('Anxiety')||situation.includes('stress')){links.push({n:'ADAA — Anxiety & Stress Resources',u:'https://adaa.org/understanding-anxiety'});links.push({n:'Calm App — Guided Meditation',u:'https://www.calm.com'});}if(situation.includes('Depression')){links.push({n:'NIMH — Depression Resources',u:'https://www.nimh.nih.gov/health/topics/depression'});links.push({n:'SAMHSA — Find Treatment',u:'https://findtreatment.samhsa.gov'});}if(situation.includes('Grief')){links.push({n:'GriefShare — Find a Support Group',u:'https://www.griefshare.org/groups'});}if(situation.includes('Trauma')||situation.includes('PTSD')){links.push({n:'SAMHSA — Trauma Resources',u:'https://www.samhsa.gov/trauma-violence'});}if(situation.includes('Addiction')){links.push({n:'SAMHSA — Find Addiction Treatment',u:'https://findtreatment.samhsa.gov'});links.push({n:'AA — Find a Meeting',u:'https://www.aa.org/find-aa'});}if(support.includes('therapist')){links.push({n:'Open Path — Affordable Therapy $30-$80',u:'https://openpathcollective.org'});links.push({n:'Psychology Today — Find a Therapist',u:'https://www.psychologytoday.com/us/therapists'});}if(links.length===0){links.push({n:'988 Lifeline',u:'https://988lifeline.org'});links.push({n:'Open Path Affordable Therapy',u:'https://openpathcollective.org'});}return links;}
   },
-  {name:'Paperwork & Forms',desc:'IDs, taxes, government',
-   questions:[
-     {id:'need',l:'What do you need?',t:'select',o:['Birth certificate','State ID or license','Social Security card','File taxes free','Apply for benefits']},
-     {id:'urgent',l:'How urgent is this?',t:'select',o:['Need it ASAP','Within a month','Just planning ahead']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. Ohio'}
-   ],
-   buildLinks:function(a){
-     var need=a.need||'';var links=[];
-     if(need.includes('Birth')){links.push({n:'VitalChek Birth Certificate',u:'https://www.vitalchek.com/birth-certificates.aspx'});links.push({n:'CDC Vital Records by State',u:'https://www.cdc.gov/nchs/w2w/index.htm'});}
-     if(need.includes('ID')||need.includes('license')){links.push({n:'DMV.org State ID Guide',u:'https://www.dmv.org/id-cards.php'});links.push({n:'USA.gov State ID',u:'https://www.usa.gov/state-id'});}
-     if(need.includes('Social Security')){links.push({n:'SSA Replace SS Card',u:'https://www.ssa.gov/myaccount/replacement-card.html'});}
-     if(need.includes('taxes')||need.includes('Taxes')){links.push({n:'IRS Free File',u:'https://www.irs.gov/filing/free-file-do-your-federal-taxes-for-free'});links.push({n:'IRS VITA Free Help',u:'https://www.irs.gov/vita'});}
-     if(need.includes('benefits')){links.push({n:'Benefits.gov',u:'https://www.benefits.gov'});links.push({n:'USA.gov Benefits',u:'https://www.usa.gov/benefits'});}
-     if(links.length===0){links.push({n:'USA.gov',u:'https://www.usa.gov'});links.push({n:'Benefits.gov',u:'https://www.benefits.gov'});}
-     return links;
-   }
+  {name:'Paperwork & Forms',desc:'IDs, taxes, government docs',
+   questions:[{id:'need',l:'What do you need?',t:'select',o:['Birth certificate','State ID or driver license','Social Security card','Passport','File taxes for free','Apply for government benefits','Marriage or divorce certificate','Name change','Military records']},{id:'urgent',l:'How urgent is this?',t:'select',o:['Need it within days','Within a month','Just planning ahead']},{id:'state',l:'Your state',t:'text',p:'e.g. Ohio'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var need=a.need||'';var links=[];if(need.includes('Birth')){links.push({n:'VitalChek — Order Birth Certificate',u:'https://www.vitalchek.com/birth-certificates.aspx'});links.push({n:'CDC — Vital Records by State',u:'https://www.cdc.gov/nchs/w2w/index.htm'});}if(need.includes('ID')||need.includes('license')){links.push({n:'DMV.org — Get ID in '+(a.state||'Your State'),u:'https://www.dmv.org/id-cards.php'});links.push({n:'USA.gov — State ID Requirements',u:'https://www.usa.gov/state-id'});}if(need.includes('Social Security')){links.push({n:'SSA — Replace Social Security Card',u:'https://www.ssa.gov/myaccount/replacement-card.html'});}if(need.includes('Passport')){links.push({n:'State Dept — Get or Renew Passport',u:'https://travel.state.gov/content/travel/en/passports.html'});}if(need.includes('taxes')||need.includes('Taxes')){links.push({n:'IRS Free File',u:'https://www.irs.gov/filing/free-file-do-your-federal-taxes-for-free'});links.push({n:'IRS VITA — Free Tax Help',u:'https://www.irs.gov/vita'});}if(need.includes('benefits')){links.push({n:'Benefits.gov — All Programs',u:'https://www.benefits.gov'});links.push({n:'USA.gov — Government Benefits',u:'https://www.usa.gov/benefits'});}if(need.includes('Name change')){links.push({n:'USA.gov — How to Change Your Name',u:'https://www.usa.gov/name-change'});}if(need.includes('Military')){links.push({n:'National Archives — Military Records',u:'https://www.archives.gov/veterans'});}if(links.length===0){links.push({n:'USA.gov',u:'https://www.usa.gov'});links.push({n:'Benefits.gov',u:'https://www.benefits.gov'});}return links;}
   },
   {name:'Immigration',desc:'Visas, citizenship, rights',
-   questions:[
-     {id:'status',l:'Immigration situation',t:'select',o:['Just arrived','On a visa','Undocumented','Applying for green card','Applying for citizenship']},
-     {id:'need',l:'What do you need?',t:'select',o:['Legal help','Know my rights','Apply for status','Find local support','Emergency situation']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. Arizona'}
-   ],
-   buildLinks:function(a){
-     var need=a.need||'';var status=a.status||'';var links=[];
-     links.push({n:'USCIS.gov Official Info',u:'https://www.uscis.gov'});
-     if(need.includes('Legal')){links.push({n:'Immigration Advocates Network',u:'https://www.immigrationadvocates.org/nonprofit/legaldirectory/'});links.push({n:'ILRC Legal Resources',u:'https://www.ilrc.org'});}
-     if(need.includes('rights')){links.push({n:'ACLU Immigrant Rights',u:'https://www.aclu.org/know-your-rights/immigrants-rights'});}
-     if(status.includes('citizenship')){links.push({n:'USCIS N-400 Application',u:'https://www.uscis.gov/n-400'});}
-     if(status.includes('green card')){links.push({n:'USCIS Green Card Info',u:'https://www.uscis.gov/green-card'});}
-     if(need.includes('Emergency')){links.push({n:'RAICES Emergency Help',u:'https://www.raicestexas.org'});links.push({n:'211.org Immigrant Services',u:'https://www.211.org'});}
-     return links;
-   }
+   questions:[{id:'status',l:'Immigration situation',t:'select',o:['Just arrived in the US','On a work or student visa','Undocumented','Permanent resident (green card)','Applying for citizenship','DACA recipient','Seeking asylum','Spouse or family visa','Temporary Protected Status (TPS)']},{id:'need',l:'What do you need?',t:'select',o:['Free legal help','Know my rights','Apply for status or renewal','Find community resources','Emergency situation','English language help','Work authorization','Translation services']},{id:'state',l:'Your state',t:'text',p:'e.g. Arizona'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more about your situation...'}],
+   buildLinks:function(a){var need=a.need||'';var status=a.status||'';var links=[];links.push({n:'USCIS.gov — Official Immigration Info',u:'https://www.uscis.gov'});if(need.includes('legal')||need.includes('Legal')){links.push({n:'Immigration Advocates Network',u:'https://www.immigrationadvocates.org/nonprofit/legaldirectory/'});links.push({n:'ILRC — Immigration Legal Resources',u:'https://www.ilrc.org'});}if(need.includes('rights')){links.push({n:'ACLU — Know Your Immigrant Rights',u:'https://www.aclu.org/know-your-rights/immigrants-rights'});}if(status.includes('citizenship')){links.push({n:'USCIS — Naturalization Application (N-400)',u:'https://www.uscis.gov/n-400'});}if(status.includes('DACA')){links.push({n:'USCIS — DACA Information',u:'https://www.uscis.gov/DACA'});}if(status.includes('asylum')){links.push({n:'USCIS — Asylum Information',u:'https://www.uscis.gov/humanitarian/refugees-and-asylum/asylum'});}if(need.includes('English')||need.includes('Translation')){links.push({n:'USA Learns — Free English Classes',u:'https://www.usalearns.org'});}if(need.includes('Emergency')){links.push({n:'RAICES — Emergency Help',u:'https://www.raicestexas.org'});links.push({n:'211.org — Immigrant Services',u:'https://www.211.org'});}return links;}
   },
   {name:'Disability',desc:'Benefits, services, rights',
-   questions:[
-     {id:'need',l:'What do you need?',t:'select',o:['Apply for disability benefits','Know my rights','Find local services','Workplace accommodations','Transportation help']},
-     {id:'type',l:'Type of disability',t:'select',o:['Physical','Mental health','Developmental','Visual or hearing','Multiple']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. Michigan'}
-   ],
-   buildLinks:function(a){
-     var need=a.need||'';var links=[];
-     if(need.includes('benefits')){links.push({n:'SSA Apply for Disability',u:'https://www.ssa.gov/applyfordisability/'});links.push({n:'SSA Check Eligibility',u:'https://www.ssa.gov/benefits/disability/'});}
-     if(need.includes('rights')){links.push({n:'ADA National Network',u:'https://adata.org/learn-about-ada'});links.push({n:'Disability Rights Advocates',u:'https://dralegal.org'});}
-     if(need.includes('services')){links.push({n:'ACL Disability Services',u:'https://acl.gov/programs/aging-and-disability-networks/aging-and-disability-resource-centers'});links.push({n:'211.org Local Resources',u:'https://www.211.org'});}
-     if(need.includes('Workplace')){links.push({n:'JAN Workplace Accommodations',u:'https://askjan.org'});}
-     if(need.includes('Transportation')){links.push({n:'ADA Paratransit Rights',u:'https://www.ada.gov/topics/transportation/'});}
-     if(links.length===0){links.push({n:'SSA Disability Benefits',u:'https://www.ssa.gov/disability'});links.push({n:'ADA Rights',u:'https://adata.org'});}
-     return links;
-   }
+   questions:[{id:'need',l:'What do you need?',t:'select',o:['Apply for disability benefits (SSDI/SSI)','Know my disability rights','Find local disability services','Workplace accommodations','Disability transportation','Assistive technology help','Appeal a denied claim','Veteran disability benefits']},{id:'type',l:'Type of disability',t:'select',o:['Physical / mobility','Mental health','Developmental / intellectual','Visual impairment','Hearing impairment','Chronic illness','Multiple disabilities','Prefer not to say']},{id:'state',l:'Your state',t:'text',p:'e.g. Michigan'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var need=a.need||'';var links=[];if(need.includes('benefits')||need.includes('SSDI')||need.includes('SSI')){links.push({n:'SSA — Apply for Disability Benefits',u:'https://www.ssa.gov/applyfordisability/'});links.push({n:'SSA — Check If You Qualify',u:'https://www.ssa.gov/benefits/disability/'});}if(need.includes('rights')){links.push({n:'ADA National Network — Know Your Rights',u:'https://adata.org/learn-about-ada'});links.push({n:'Disability Rights Advocates',u:'https://dralegal.org'});}if(need.includes('services')){links.push({n:'ACL — Find Disability Services Near You',u:'https://acl.gov/programs/aging-and-disability-networks/aging-and-disability-resource-centers'});links.push({n:'211.org — Local Resources',u:'https://www.211.org'});}if(need.includes('Workplace')){links.push({n:'JAN — Workplace Accommodation Help',u:'https://askjan.org'});}if(need.includes('Transportation')){links.push({n:'ADA — Paratransit Rights',u:'https://www.ada.gov/topics/transportation/'});}if(need.includes('technology')){links.push({n:'AbilityNet — Assistive Tech Help',u:'https://abilitynet.org.uk'});}if(need.includes('Appeal')){links.push({n:'SSA — Appeals Process',u:'https://www.ssa.gov/appeals/'});}if(need.includes('Veteran')){links.push({n:'VA — Veteran Disability Benefits',u:'https://www.va.gov/disability/'});}if(links.length===0){links.push({n:'SSA Disability Benefits',u:'https://www.ssa.gov/disability'});links.push({n:'ADA Rights',u:'https://adata.org'});}return links;}
   },
   {name:'Pets & Animals',desc:'Care, shelters, assistance',
-   questions:[
-     {id:'need',l:'What do you need?',t:'select',o:['Adopt a pet','Find low-cost vet care','Pet food assistance','Lost or found a pet','Report animal abuse']},
-     {id:'pet',l:'Type of pet',t:'select',o:['Dog','Cat','Both','Other']},
-     {id:'location',l:'City or zip code',t:'text',p:'e.g. Portland, OR'}
-   ],
-   buildLinks:function(a){
-     var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];
-     if(need.includes('Adopt')){links.push({n:'Petfinder — Adopt Near '+(a.location||'You'),u:'https://www.petfinder.com/animal-shelters-and-rescues/search/?location='+loc});links.push({n:'ASPCA Adoption',u:'https://www.aspca.org/adopt-pet'});}
-     if(need.includes('vet')||need.includes('Vet')){links.push({n:'ASPCA Low-Cost Vet Care',u:'https://www.aspca.org/pet-care/general-pet-care/low-cost-veterinary-care'});links.push({n:'Humane Society Vet Help',u:'https://www.humanesociety.org/resources/how-afford-veterinary-care'});}
-     if(need.includes('food')||need.includes('Food')){links.push({n:'RedRover Pet Assistance',u:'https://redrover.org/relief/'});links.push({n:'Pet Food Stamps',u:'https://www.petfoodstamps.org'});}
-     if(need.includes('Lost')){links.push({n:'PawBoost Lost & Found',u:'https://www.pawboost.com'});}
-     if(need.includes('abuse')){links.push({n:'ASPCA Report Cruelty',u:'https://www.aspca.org/take-action/report-animal-cruelty'});}
-     if(links.length===0){links.push({n:'Petfinder',u:'https://www.petfinder.com'});links.push({n:'ASPCA',u:'https://www.aspca.org/pet-care'});}
-     return links;
-   }
+   questions:[{id:'need',l:'What do you need?',t:'select',o:['Adopt a pet','Find low-cost vet care','Pet food assistance','Lost a pet','Found a stray pet','Report animal abuse','Pet-friendly housing help','Emergency pet boarding']},{id:'pet',l:'Type of pet',t:'select',o:['Dog','Cat','Both dog and cat','Bird','Small animal','Other']},{id:'location',l:'City or zip code',t:'text',p:'e.g. Portland, OR'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];if(need.includes('Adopt')){links.push({n:'Petfinder — Adopt Near '+(a.location||'You'),u:'https://www.petfinder.com/animal-shelters-and-rescues/search/?location='+loc});links.push({n:'ASPCA — Adoption Resources',u:'https://www.aspca.org/adopt-pet'});}if(need.includes('vet')||need.includes('Vet')){links.push({n:'ASPCA — Low-Cost Vet Care',u:'https://www.aspca.org/pet-care/general-pet-care/low-cost-veterinary-care'});links.push({n:'RedRover Relief — Emergency Vet Help',u:'https://redrover.org/relief/'});}if(need.includes('food')||need.includes('Food')){links.push({n:'RedRover Relief — Pet Food Assistance',u:'https://redrover.org/relief/'});links.push({n:'Pet Food Stamps',u:'https://www.petfoodstamps.org'});}if(need.includes('Lost')){links.push({n:'PawBoost — Lost & Found Pets Near '+(a.location||'You'),u:'https://www.pawboost.com'});}if(need.includes('Found')){links.push({n:'PawBoost — Found Pet Reporting',u:'https://www.pawboost.com'});}if(need.includes('abuse')){links.push({n:'ASPCA — Report Animal Cruelty',u:'https://www.aspca.org/take-action/report-animal-cruelty'});}if(links.length===0){links.push({n:'Petfinder',u:'https://www.petfinder.com'});links.push({n:'ASPCA',u:'https://www.aspca.org/pet-care'});}return links;}
   },
   {name:'Emergency Prep',desc:'Disasters, safety, planning',
-   questions:[
-     {id:'concern',l:'What are you preparing for?',t:'select',o:['Natural disaster','Power outage','Evacuation planning','Building an emergency kit','Disaster recovery']},
-     {id:'size',l:'Household size',t:'select',o:['Just me','2–3 people','4–6 people','7+ people']},
-     {id:'state',l:'Your state',t:'text',p:'e.g. Louisiana'}
-   ],
-   buildLinks:function(a){
-     var concern=a.concern||'';var links=[];
-     if(concern.includes('Natural')){links.push({n:'Ready.gov Natural Disasters',u:'https://www.ready.gov/natural-disasters'});links.push({n:'FEMA Preparedness',u:'https://www.fema.gov/emergency-managers/individuals-communities'});}
-     if(concern.includes('Power')){links.push({n:'Ready.gov Power Outage',u:'https://www.ready.gov/power-outages'});links.push({n:'CDC Power Outage Tips',u:'https://emergency.cdc.gov/disasters/poweroutage/'});}
-     if(concern.includes('Evacuation')){links.push({n:'Ready.gov Evacuation',u:'https://www.ready.gov/evacuation'});}
-     if(concern.includes('kit')||concern.includes('Kit')){links.push({n:'Ready.gov Emergency Kit',u:'https://www.ready.gov/kit'});links.push({n:'Red Cross Supply Checklist',u:'https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html'});}
-     if(concern.includes('recovery')){links.push({n:'FEMA Disaster Assistance',u:'https://www.disasterassistance.gov'});links.push({n:'Red Cross Recovery',u:'https://www.redcross.org/get-help/disaster-relief-and-recovery-services.html'});}
-     links.push({n:'NOAA Weather Alerts',u:'https://www.weather.gov/alerts'});
-     return links;
-   }
-  }
-];
-
-// Build category grid
-var grid=document.getElementById('catGrid');
-cats.forEach(function(c){
-  var a=document.createElement('a');
-  a.className='cat';a.href='#';
-  a.innerHTML='<div class="cat-name">'+c.name+'</div><div class="cat-desc">'+c.desc+'</div>';
-  a.onclick=function(e){e.preventDefault();openCat(c);};
-  grid.appendChild(a);
-});
+   questions:[{id:'concern',l:'What are you preparing for?',t:'select',o:['Hurricane or tropical storm','Earthquake','Tornado or severe storm','Wildfire','Flooding','Power outage','Winter storm','Evacuation planning','Building an emergency kit','Disaster recovery & FEMA help']},{id:'size',l:'Household size',t:'select',o:['Just me','2–3 people','4–6 people','7+ people','I have pets','I have someone with disabilities']},{id:'state',l:'Your state',t:'text',p:'e.g. Louisiana'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var concern=a.concern||'';var links=[];if(concern.includes('Hurricane')){links.push({n:'Ready.gov — Hurricane Preparedness',u:'https://www.ready.gov/hurricanes'});}if(concern.includes('Earthquake')){links.push({n:'Ready.gov — Earthquake Safety',u:'https://www.ready.gov/earthquakes'});}if(concern.includes('Tornado')||concern.includes('storm')){links.push({n:'Ready.gov — Tornado Safety',u:'https://www.ready.gov/tornadoes'});links.push({n:'NOAA — Severe Weather Alerts',u:'https://www.weather.gov/alerts'});}if(concern.includes('Wildfire')){links.push({n:'Ready.gov — Wildfire Preparedness',u:'https://www.ready.gov/wildfires'});}if(concern.includes('Flood')){links.push({n:'Ready.gov — Flood Safety',u:'https://www.ready.gov/floods'});links.push({n:'FEMA Flood Map',u:'https://msc.fema.gov/portal/home'});}if(concern.includes('Power')){links.push({n:'Ready.gov — Power Outage Safety',u:'https://www.ready.gov/power-outages'});}if(concern.includes('Winter')){links.push({n:'Ready.gov — Winter Storm Safety',u:'https://www.ready.gov/winter-weather'});}if(concern.includes('Evacuation')){links.push({n:'Ready.gov — Evacuation Planning',u:'https://www.ready.gov/evacuation'});}if(concern.includes('kit')||concern.includes('Kit')){links.push({n:'Ready.gov — Build an Emergency Kit',u:'https://www.ready.gov/kit'});links.push({n:'Red Cross — Supply Checklist',u:'https://www.redcross.org/get-help/how-to-prepare-for-emergencies/survival-kit-supplies.html'});}if(concern.includes('FEMA')||concern.includes('recovery')){links.push({n:'FEMA — Apply for Disaster Assistance',u:'https://www.disasterassistance.gov'});links.push({n:'Red Cross — Disaster Recovery',u:'https://www.redcross.org/get-help/disaster-relief-and-recovery-services.html'});}links.push({n:'NOAA — Weather Alerts',u:'https://www.weather.gov/alerts'});return links;}
+  },
+  {name:'Senior Services',desc:'Help for older adults',
+   questions:[{id:'need',l:'What do you need?',t:'select',o:['Meal delivery','In-home care help','Medicare or Medicaid help','Social Security assistance','Senior housing options','Transportation for seniors','Caregiver support','Senior legal help','Combat loneliness']},{id:'age',l:'Age range',t:'select',o:['60–69','70–79','80–89','90+','I am helping a family member']},{id:'location',l:'City or zip code',t:'text',p:'e.g. Phoenix, AZ'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var need=a.need||'';var links=[];if(need.includes('Meal')){links.push({n:'Meals on Wheels — Find Local Delivery',u:'https://www.mealsonwheelsamerica.org/find-meals'});links.push({n:'Eldercare Locator — Senior Nutrition',u:'https://eldercare.acl.gov'});}if(need.includes('care')||need.includes('Care')){links.push({n:'Eldercare Locator — In-Home Care',u:'https://eldercare.acl.gov'});links.push({n:'AARP — Home Care Resources',u:'https://www.aarp.org/caregiving/'});}if(need.includes('Medicare')){links.push({n:'Medicare.gov — Benefits & Plans',u:'https://www.medicare.gov'});links.push({n:'SHIPs — Free Medicare Counseling',u:'https://www.shiphelp.org'});}if(need.includes('Social Security')){links.push({n:'SSA.gov — Senior Benefits',u:'https://www.ssa.gov/benefits/'});}if(need.includes('housing')){links.push({n:'HUD — Senior Housing Programs',u:'https://www.hud.gov/program_offices/housing/mfh/progdesc/eld202'});}if(need.includes('Transportation')){links.push({n:'Eldercare Locator — Senior Transportation',u:'https://eldercare.acl.gov'});}if(need.includes('Caregiver')){links.push({n:'AARP — Caregiver Support',u:'https://www.aarp.org/caregiving/'});}if(need.includes('legal')){links.push({n:'NCLER — Senior Legal Resources',u:'https://ncler.acl.gov'});}if(links.length===0){links.push({n:'Eldercare Locator',u:'https://eldercare.acl.gov'});links.push({n:'AARP Resources',u:'https://www.aarp.org'});}return links;}
+  },
+  {name:'Veterans',desc:'Benefits, health, support',
+   questions:[{id:'need',l:'What do you need?',t:'select',o:['VA healthcare','Disability compensation','Housing assistance','Education & GI Bill','Mental health support','Employment help','Legal assistance','Homeless veteran services','Caregiver support']},{id:'branch',l:'Branch of service',t:'select',o:['Army','Navy','Marine Corps','Air Force','Coast Guard','National Guard','Reserve','Prefer not to say']},{id:'state',l:'Your state',t:'text',p:'e.g. Texas'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
+   buildLinks:function(a){var need=a.need||'';var links=[];links.push({n:'VA.gov — All Veteran Benefits',u:'https://www.va.gov/resources/'});if(need.includes('healthcare')){links.push({n:'VA — Find a VA Medical Center',u:'https://www.va.gov/find-locations/'});}if(need.includes('Disability')){links.push({n:'VA — Apply for Disability Benefits',u:'https://www.va.gov/disability/how-to-file-claim/'});}if(need.includes('Housing')){links.push({n:'VA — HUD-VASH Housing Program',u:'https://www.va.gov/homeless/hud-vash.asp'});}if(need.includes('Education')||need.includes('GI Bill')){links.push({n:'VA — GI Bill Benefits',u:'https://www.va.gov/education/about-gi-bill-benefits/'});}if(need.includes('Mental health')){links.push({n:'Veterans Crisis Line — Call 988 Press 1',u:'https://www.veteranscrisisline.net'});}if(need.includes('Employment')){links.push({n:'Hire Heroes USA — Free Job Help',u:'https://www.hireheroesusa.org'});}if(need.includes('Homeless')){links.push({n:'VA — Homeless Veterans Programs',u:'https://www.va.gov/homeless/'});}return links;}
+  },
+  {name:'Small Business',desc:'Start, grow, get funded',
+   questions:[{id:'stage',l:'Where are you in your business?',t:'select',o:['Just an idea — starting from scratch','Just started — need help','Running — need to grow','Need financial help or grants','Need legal or tax help','Want to hire employees','Going online / e-commerce']},{id:'industry',l:'Type of business',t:'text',p:'e.g. Restaurant, Cleaning, Tech, Retail'},{id:'state',l:'Your state',t:'text',p:'e.g. California'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more about your business...'}],
+   buildLinks:function(a){var stage=a.stage||'';var links=[];links.push({n:'SBA — Small Business Resources',u:'https://www.sba.gov'});if(stage.includes('idea')||stage.includes('scratch')||stage.includes('started')){links.push({n:'SBA — 10 Steps to Start a Business',u:'https://www.sba.gov/business-guide/10-steps-start-your-business'});links.push({n:'SCORE — Free Business Mentoring',u:'https://www.score.org'});}if(stage.includes('grow')){links.push({n:'SBA — Grow Your Business',u:'https://www.sba.gov/business-guide/grow-your-business'});}if(stage.includes('funding')||stage.includes('grants')||stage.includes('financial')){links.push({n:'Grants.gov — Find Business Grants',u:'https://www.grants.gov'});links.push({n:'Kiva — 0% Interest Business Loans',u:'https://www.kiva.org/borrow'});}if(stage.includes('legal')||stage.includes('tax')){links.push({n:'IRS — Small Business Tax Center',u:'https://www.irs.gov/businesses/small-businesses-self-employed'});}if(stage.includes('online')||stage.includes('e-commerce')){links.push({n:'Shopify — Start Selling Online',u:'https://www.shopify.com'});}return links;}
+  }grid.appendChild(a);});
 
 function openCat(c){
   currentCat=c;currentAnswers={};
@@ -744,13 +528,9 @@ function openCat(c){
   c.questions.forEach(function(q){
     var div=document.createElement('div');div.className='q-item';
     var label=document.createElement('label');label.textContent=q.l;div.appendChild(label);
-    if(q.t==='select'){
-      var sel=document.createElement('select');sel.id='q_'+q.id;
-      q.o.forEach(function(opt){var o=document.createElement('option');o.value=opt;o.textContent=opt;sel.appendChild(o);});
-      div.appendChild(sel);
-    } else {
-      var inp=document.createElement('input');inp.type='text';inp.id='q_'+q.id;inp.placeholder=q.p||'';div.appendChild(inp);
-    }
+    if(q.t==='select'){var sel=document.createElement('select');sel.id='q_'+q.id;q.o.forEach(function(opt){var o=document.createElement('option');o.value=opt;o.textContent=opt;sel.appendChild(o);});div.appendChild(sel);}
+    else if(q.t==='textarea'){var ta=document.createElement('textarea');ta.id='q_'+q.id;ta.placeholder=q.p||'';div.appendChild(ta);}
+    else{var inp=document.createElement('input');inp.type='text';inp.id='q_'+q.id;inp.placeholder=q.p||'';div.appendChild(inp);}
     qList.appendChild(div);
   });
   document.getElementById('catQView').style.display='block';
@@ -759,10 +539,7 @@ function openCat(c){
 }
 
 function showResults(){
-  currentCat.questions.forEach(function(q){
-    var el=document.getElementById('q_'+q.id);
-    if(el)currentAnswers[q.id]=el.value;
-  });
+  currentCat.questions.forEach(function(q){var el=document.getElementById('q_'+q.id);if(el)currentAnswers[q.id]=el.value;});
   var links=currentCat.buildLinks(currentAnswers);
   document.getElementById('catRTitle').textContent=currentCat.name+' Resources';
   var container=document.getElementById('resultLinks');container.innerHTML='';
@@ -776,11 +553,12 @@ function showResults(){
     fav.onclick=function(e){
       e.preventDefault();
       if(!currentUser){openAuth(e,'signup');return;}
+      if(!isPremium&&favorites.length>=FREE_SAVE_LIMIT&&!isFav){alert('Free plan allows up to 5 favorites. Upgrade to Thrive+ for unlimited!');return;}
       var idx=favorites.findIndex(function(f){return f.u===l.u;});
-      if(idx>-1){favorites.splice(idx,1);fav.classList.remove('active');}
-      else{favorites.push({n:l.n,cat:currentCat.name,u:l.u});fav.classList.add('active');}
+      if(idx>-1){favorites.splice(idx,1);fav.classList.remove('active');isFav=false;}
+      else{favorites.push({n:l.n,cat:currentCat.name,u:l.u});fav.classList.add('active');isFav=true;}
       localStorage.setItem('thrive_fav',JSON.stringify(favorites));
-db.collection('users').doc(currentUser.email).collection('favorites').doc(encodeURIComponent(l.u)).set({n:l.n,cat:currentCat.name,u:l.u}).catch(function(e){console.log('Fav error:',e);});
+      db.collection('users').doc(currentUser.email).collection('favorites').doc(encodeURIComponent(l.u)).set({n:l.n,cat:currentCat.name,u:l.u}).catch(function(){});
     };
     row.appendChild(a);row.appendChild(fav);container.appendChild(row);
   });
@@ -791,43 +569,56 @@ db.collection('users').doc(currentUser.email).collection('favorites').doc(encode
 function saveToSaved(name,cat,url){
   if(!currentUser)return;
   if(savedItems.findIndex(function(s){return s.u===url;})>-1)return;
+  if(!isPremium&&savedItems.length>=FREE_SAVE_LIMIT)return;
   var item={n:name,cat:cat,u:url,id:Date.now()};
   savedItems.unshift(item);
   if(savedItems.length>50)savedItems=savedItems.slice(0,50);
   localStorage.setItem('thrive_saved',JSON.stringify(savedItems));
-  db.collection('users').doc(currentUser.email).collection('saved').add(item).catch(function(e){console.log('Save error:',e);});
+  db.collection('users').doc(currentUser.email).collection('saved').add(item).catch(function(){});
 }
 
 function showQuestions(){document.getElementById('catQView').style.display='block';document.getElementById('catRView').style.display='none';}
 
-function openDash(e){
-  if(e)e.preventDefault();
-  if(!currentUser){openAuth(null,'signup');return;}
-  renderDash();
-  document.getElementById('dashModalBg').classList.add('open');
+async function sendChat(){
+  if(chatCount>=FREE_CHAT_LIMIT&&!isPremium){addChatMsg('You have used all 10 free chats for today. Upgrade to Thrive+ for unlimited AI chat!','ai');return;}
+  var input=document.getElementById('chatInput');
+  var text=input.value.trim();
+  if(!text)return;
+  input.value='';
+  document.getElementById('chatChips').style.display='none';
+  addChatMsg(text,'user');
+  chatCount++;
+  localStorage.setItem('thrive_chat_count',chatCount.toString());
+  updateChatLimit();
+  var typing=addChatMsg('<span class="dot"></span><span class="dot"></span><span class="dot"></span>','ai');
+  try{
+    var res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:'You are Thrive AI, a warm and knowledgeable life assistant. Help users with housing, health, money, jobs, legal rights, food assistance, family support, tech help, transportation, mental health, paperwork, immigration, disability, pets, emergency prep, senior services, veteran benefits, small business, childcare, and LGBTQ+ resources. Give clear, practical, compassionate answers in 3-5 sentences. Always point toward free or affordable resources. If someone seems in crisis, provide the relevant hotline first.',messages:[{role:'user',content:text}]})});
+    var data=await res.json();
+    var reply=data.content&&data.content.map(function(b){return b.text||'';}).join('')||'I had trouble with that. Please try again.';
+    typing.innerHTML=reply;
+  }catch(e){typing.innerHTML='Something went wrong. Please try again.';}
+  scrollChat();
 }
 
-function switchDash(tab){
-  document.querySelectorAll('.dash-tab').forEach(function(t,i){t.classList.toggle('active',(tab==='favorites'&&i===0)||(tab==='saved'&&i===1));});
-  document.getElementById('favPanel').classList.toggle('active',tab==='favorites');
-  document.getElementById('savedPanel').classList.toggle('active',tab==='saved');
-}
+function sendChip(el){document.getElementById('chatInput').value=el.textContent;sendChat();}
+function addChatMsg(content,role){var msgs=document.getElementById('chatMsgs');var d=document.createElement('div');d.className='chat-msg '+role;d.innerHTML=content;msgs.appendChild(d);scrollChat();return d;}
+function scrollChat(){var m=document.getElementById('chatMsgs');m.scrollTop=m.scrollHeight;}
+function updateChatLimit(){var remaining=FREE_CHAT_LIMIT-chatCount;document.getElementById('chatLimitText').textContent=isPremium?'Unlimited chats — Thrive+ member':remaining+' of '+FREE_CHAT_LIMIT+' free chats remaining today';document.getElementById('chatUpgradeBtn').style.display=isPremium?'none':'';}
+updateChatLimit();
 
+function openDash(e){if(e)e.preventDefault();if(!currentUser){openAuth(null,'signup');return;}renderDash();document.getElementById('dashModalBg').classList.add('open');}
+function switchDash(tab){document.querySelectorAll('.dash-tab').forEach(function(t,i){t.classList.toggle('active',(tab==='favorites'&&i===0)||(tab==='saved'&&i===1));});document.getElementById('favPanel').classList.toggle('active',tab==='favorites');document.getElementById('savedPanel').classList.toggle('active',tab==='saved');}
 function renderDash(){
-  var fp=document.getElementById('favPanel');var sp=document.getElementById('savedPanel');
-  fp.innerHTML='';sp.innerHTML='';
+  var fp=document.getElementById('favPanel');var sp=document.getElementById('savedPanel');fp.innerHTML='';sp.innerHTML='';
   if(favorites.length===0){fp.innerHTML='<div class="empty-state"><div class="empty-icon">♥</div><p>No favorites yet.<br/>Tap ♥ on any resource to save it here.</p></div>';}
   else{favorites.forEach(function(f,i){var d=document.createElement('div');d.className='saved-item';d.innerHTML='<div><div class="saved-item-name"><a href="'+f.u+'" target="_blank" style="color:var(--green);text-decoration:none;">'+f.n+'</a></div><div class="saved-item-cat">'+f.cat+'</div></div><button class="saved-item-del" onclick="removeFav('+i+')">✕</button>';fp.appendChild(d);});}
-  if(savedItems.length===0){sp.innerHTML='<div class="empty-state"><div class="empty-icon">📌</div><p>No saved items yet.<br/>Resources you click are auto-saved here.</p></div>';}
+  if(savedItems.length===0){sp.innerHTML='<div class="empty-state"><div class="empty-icon">📌</div><p>No saved items yet.<br/>Resources you visit are auto-saved here.</p></div>';}
   else{savedItems.forEach(function(s,i){var d=document.createElement('div');d.className='saved-item';d.innerHTML='<div><div class="saved-item-name"><a href="'+s.u+'" target="_blank" style="color:var(--green);text-decoration:none;">'+s.n+'</a></div><div class="saved-item-cat">'+s.cat+'</div></div><button class="saved-item-del" onclick="removeSaved('+i+')">✕</button>';sp.appendChild(d);});}
 }
-
-function removeFav(i){favorites.splice(i,1);f
-db.collection('users').doc(currentUser.email).collection('favorites').doc(encodeURIComponent(l.u)).set({n:l.n,cat:currentCat.name,u:l.u}).catch(function(e){console.log('Fav error:',e);});renderDash();}
+function removeFav(i){favorites.splice(i,1);localStorage.setItem('thrive_fav',JSON.stringify(favorites));renderDash();}
 function removeSaved(i){savedItems.splice(i,1);localStorage.setItem('thrive_saved',JSON.stringify(savedItems));renderDash();}
 function closeBg(e,id){if(e.target===document.getElementById(id))document.getElementById(id).classList.remove('open');}
 function openAuth(e,mode){if(e)e.preventDefault();authMode=mode;switchAuthTab(mode);document.getElementById('authModalBg').classList.add('open');}
-
 function switchAuthTab(mode){
   authMode=mode;
   document.getElementById('tabSignup').classList.toggle('active',mode==='signup');
@@ -838,7 +629,6 @@ function switchAuthTab(mode){
   document.getElementById('authSub').textContent=mode==='signup'?'Join free — save your resources and favorites':'Good to have you back';
   document.getElementById('authNote').textContent=mode==='signup'?'By signing up you agree to our Terms of Service':'';
 }
-
 function updateUserUI(){
   var on=!!currentUser;
   document.getElementById('navSignin').style.display=on?'none':'';
@@ -848,10 +638,8 @@ function updateUserUI(){
   var freeBtn=document.getElementById('freeSignupBtn');
   if(heroBtn)heroBtn.style.display=on?'none':'';
   if(freeBtn)freeBtn.style.display=on?'none':'';
-  if(on){
-    document.getElementById('userAvatar').textContent=currentUser.name.charAt(0).toUpperCase();
-    document.getElementById('userName').textContent=currentUser.name;
-  }
+  if(on){document.getElementById('userAvatar').textContent=currentUser.name.charAt(0).toUpperCase();document.getElementById('userName').textContent=currentUser.name;}
+  updateChatLimit();
 }
 </script>
 </body>
