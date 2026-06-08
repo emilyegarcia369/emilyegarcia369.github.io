@@ -296,7 +296,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
         <li><span class="check">✓</span>Life profile — auto-filters results</li>
         <li><span class="check">✓</span>Early access to new features</li>
       </ul>
-      <button class="plan-btn plan-btn-paid" onclick="window.open('https://buy.stripe.com/test_6oU8wIg8TbfI1e93Yo8N200','_blank')">Get Thrive+ for $7.99/month</button>
+      https://buy.stripe.com/7sY28q7nB1XGaEt6zoeIw00
     </div>
   </div>
 </div>
@@ -373,6 +373,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;}
 
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
 <script>
 // Firebase config
@@ -387,11 +388,22 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+const db = firebase.firestore();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 auth.onAuthStateChanged(function(user){
   if(user){
     currentUser={name:user.displayName||user.email.split('@')[0],email:user.email};
+    db.collection('users').doc(user.email).collection('saved').orderBy('id','desc').limit(50).get().then(function(snap){
+      savedItems=[];
+      snap.forEach(function(doc){savedItems.push(doc.data());});
+      localStorage.setItem('thrive_saved',JSON.stringify(savedItems));
+    }).catch(function(e){console.log('Load saved error:',e);});
+    db.collection('users').doc(user.email).collection('favorites').get().then(function(snap){
+      favorites=[];
+      snap.forEach(function(doc){favorites.push(doc.data());});
+      localStorage.setItem('thrive_fav',JSON.stringify(favorites));
+    }).catch(function(e){console.log('Load fav error:',e);});
   } else {
     currentUser=null;
   }
@@ -768,6 +780,7 @@ function showResults(){
       if(idx>-1){favorites.splice(idx,1);fav.classList.remove('active');}
       else{favorites.push({n:l.n,cat:currentCat.name,u:l.u});fav.classList.add('active');}
       localStorage.setItem('thrive_fav',JSON.stringify(favorites));
+db.collection('users').doc(currentUser.email).collection('favorites').doc(encodeURIComponent(l.u)).set({n:l.n,cat:currentCat.name,u:l.u}).catch(function(e){console.log('Fav error:',e);});
     };
     row.appendChild(a);row.appendChild(fav);container.appendChild(row);
   });
@@ -778,9 +791,11 @@ function showResults(){
 function saveToSaved(name,cat,url){
   if(!currentUser)return;
   if(savedItems.findIndex(function(s){return s.u===url;})>-1)return;
-  savedItems.unshift({n:name,cat:cat,u:url,id:Date.now()});
+  var item={n:name,cat:cat,u:url,id:Date.now()};
+  savedItems.unshift(item);
   if(savedItems.length>50)savedItems=savedItems.slice(0,50);
   localStorage.setItem('thrive_saved',JSON.stringify(savedItems));
+  db.collection('users').doc(currentUser.email).collection('saved').add(item).catch(function(e){console.log('Save error:',e);});
 }
 
 function showQuestions(){document.getElementById('catQView').style.display='block';document.getElementById('catRView').style.display='none';}
@@ -807,7 +822,8 @@ function renderDash(){
   else{savedItems.forEach(function(s,i){var d=document.createElement('div');d.className='saved-item';d.innerHTML='<div><div class="saved-item-name"><a href="'+s.u+'" target="_blank" style="color:var(--green);text-decoration:none;">'+s.n+'</a></div><div class="saved-item-cat">'+s.cat+'</div></div><button class="saved-item-del" onclick="removeSaved('+i+')">✕</button>';sp.appendChild(d);});}
 }
 
-function removeFav(i){favorites.splice(i,1);localStorage.setItem('thrive_fav',JSON.stringify(favorites));renderDash();}
+function removeFav(i){favorites.splice(i,1);f
+db.collection('users').doc(currentUser.email).collection('favorites').doc(encodeURIComponent(l.u)).set({n:l.n,cat:currentCat.name,u:l.u}).catch(function(e){console.log('Fav error:',e);});renderDash();}
 function removeSaved(i){savedItems.splice(i,1);localStorage.setItem('thrive_saved',JSON.stringify(savedItems));renderDash();}
 function closeBg(e,id){if(e.target===document.getElementById(id))document.getElementById(id).classList.remove('open');}
 function openAuth(e,mode){if(e)e.preventDefault();authMode=mode;switchAuthTab(mode);document.getElementById('authModalBg').classList.add('open');}
