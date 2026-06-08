@@ -519,7 +519,11 @@ var cats=[
   {name:'Small Business',desc:'Start, grow, get funded',
    questions:[{id:'stage',l:'Where are you in your business?',t:'select',o:['Just an idea — starting from scratch','Just started — need help','Running — need to grow','Need financial help or grants','Need legal or tax help','Want to hire employees','Going online / e-commerce']},{id:'industry',l:'Type of business',t:'text',p:'e.g. Restaurant, Cleaning, Tech, Retail'},{id:'state',l:'Your state',t:'text',p:'e.g. California'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more about your business...'}],
    buildLinks:function(a){var stage=a.stage||'';var links=[];links.push({n:'SBA — Small Business Resources',u:'https://www.sba.gov'});if(stage.includes('idea')||stage.includes('scratch')||stage.includes('started')){links.push({n:'SBA — 10 Steps to Start a Business',u:'https://www.sba.gov/business-guide/10-steps-start-your-business'});links.push({n:'SCORE — Free Business Mentoring',u:'https://www.score.org'});}if(stage.includes('grow')){links.push({n:'SBA — Grow Your Business',u:'https://www.sba.gov/business-guide/grow-your-business'});}if(stage.includes('funding')||stage.includes('grants')||stage.includes('financial')){links.push({n:'Grants.gov — Find Business Grants',u:'https://www.grants.gov'});links.push({n:'Kiva — 0% Interest Business Loans',u:'https://www.kiva.org/borrow'});}if(stage.includes('legal')||stage.includes('tax')){links.push({n:'IRS — Small Business Tax Center',u:'https://www.irs.gov/businesses/small-businesses-self-employed'});}if(stage.includes('online')||stage.includes('e-commerce')){links.push({n:'Shopify — Start Selling Online',u:'https://www.shopify.com'});}return links;}
-  }grid.appendChild(a);});
+  }
+];
+
+var grid=document.getElementById('catGrid');
+cats.forEach(function(c){var a=document.createElement('a');a.className='cat';a.href='#';a.innerHTML='<div class="cat-name">'+c.name+'</div><div class="cat-desc">'+c.desc+'</div>';a.onclick=function(e){e.preventDefault();openCat(c);};grid.appendChild(a);});
 
 function openCat(c){
   currentCat=c;currentAnswers={};
