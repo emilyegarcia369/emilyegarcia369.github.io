@@ -8,9 +8,10 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--bg:#0f1319;--bg2:#141923;--bg3:#191e2c;--border:#1e2535;--border2:#2a3450;--green:#00d68f;--green2:#00b377;--green-glow:rgba(0,214,143,0.15);--green-glow2:rgba(0,214,143,0.08);--navy:#4d7cff;--text:#e8edf5;--text2:#8892a4;--text3:#4a5568;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+body.light-mode{--bg:#ffffff;--bg2:#f5f7fa;--bg3:#eef1f6;--border:#e2e8f0;--border2:#d0d9e8;--green:#00b377;--green2:#009960;--green-glow:rgba(0,179,119,0.12);--green-glow2:rgba(0,179,119,0.08);--navy:#3d6fff;--text:#0a0d14;--text2:#4a5568;--text3:#8892a4;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s;}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg2);}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,13,20,0.92);backdrop-filter:blur(12px);z-index:100;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);backdrop-filter:blur(12px);z-index:100;}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-text{font-family:'Exo 2',sans-serif;font-size:22px;font-weight:800;color:var(--green);letter-spacing:-1px;}
 .logo-text span{color:var(--navy);}
@@ -47,7 +48,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .cat:hover{border-color:var(--green);background:var(--bg3);box-shadow:0 0 16px var(--green-glow2);}
 .cat-name{font-family:'Exo 2',sans-serif;font-size:13px;font-weight:700;color:var(--text);}
 .cat-desc{font-size:11px;color:var(--text3);}
-.about{background:linear-gradient(135deg,#0d1528 0%,#0a1a14 100%);padding:80px 20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.about{background:var(--bg2);padding:80px 20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .about-inner{max-width:680px;margin:0 auto;text-align:center;}
 .about-inner h2{font-family:'Exo 2',sans-serif;font-size:38px;font-weight:800;color:var(--text);margin-bottom:22px;letter-spacing:-1px;}
 .about-inner h2 span{color:var(--green);}
