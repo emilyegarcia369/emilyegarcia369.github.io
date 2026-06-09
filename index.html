@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#0a0d14;--bg2:#111520;--bg3:#161b28;--border:#1e2535;--border2:#2a3450;--green:#00d68f;--green2:#00b377;--green-glow:rgba(0,214,143,0.15);--green-glow2:rgba(0,214,143,0.08);--navy:#4d7cff;--text:#e8edf5;--text2:#8892a4;--text3:#4a5568;}
+:root{--bg:#0f1319;--bg2:#141923;--bg3:#191e2c;--border:#1e2535;--border2:#2a3450;--green:#00d68f;--green2:#00b377;--green-glow:rgba(0,214,143,0.15);--green-glow2:rgba(0,214,143,0.08);--navy:#4d7cff;--text:#e8edf5;--text2:#8892a4;--text3:#4a5568;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg2);}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
 nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,13,20,0.92);backdrop-filter:blur(12px);z-index:100;}
@@ -155,6 +155,8 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;margin-top:8px;}
 .user-name{font-size:14px;font-weight:600;color:var(--text);font-family:'Exo 2',sans-serif;}
 .signout-btn{font-size:12px;color:var(--text3);cursor:pointer;border:none;background:none;padding:4px 8px;transition:color .15s;}
 .signout-btn:hover{color:var(--green);}
+.theme-toggle{width:34px;height:34px;border-radius:50%;border:1px solid var(--border2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .15s;color:var(--text2);}
+.theme-toggle:hover{border-color:var(--green);color:var(--green);}
 .chat-wrap{display:flex;flex-direction:column;border:1px solid var(--border2);border-radius:22px;overflow:hidden;max-width:700px;margin:0 auto;}
 .chat-msgs{height:340px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
 .chat-msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.55;}
@@ -200,6 +202,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;margin-top:8px;}
     <a href="#" onclick="openDash(event)">My Saves</a>
   </div>
   <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Toggle light/dark mode">🌙</button>
     <div class="user-bar" id="userBar">
       <div class="user-avatar" id="userAvatar">?</div>
       <span class="user-name" id="userName"></span>
@@ -259,7 +262,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;margin-top:8px;}
     <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:20px;padding:20px 22px;max-width:420px;margin:0 auto 28px;text-align:left;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
         <div style="width:28px;height:28px;border-radius:50%;background:var(--green-glow);border:1px solid rgba(0,214,143,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M16 26 C16 26 9 21 9 15 C9 11 12 8 16 8 C20 8 23 11 23 15 C23 21 16 26 16 26Z" fill="#00d68f" fill-opacity="0.6" stroke="#00d68f" stroke-width="1.5"/><line x1="16" y1="26" x2="16" y2="12" stroke="#00d68f" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M16 26 C16 26 9 21 9 15 C9 11 12 8 16 8 C20 8 23 11 23 15 C23 21 16 26 16 26Z" fill="#00d68f" fill-opacity="0.5" stroke="#00d68f" stroke-width="1.5"/><line x1="16" y1="26" x2="16" y2="12" stroke="#00d68f" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="18" x2="12" y2="15" stroke="#00d68f" stroke-width="1.2" stroke-linecap="round"/><line x1="16" y1="21" x2="20" y2="18" stroke="#00d68f" stroke-width="1.2" stroke-linecap="round"/><circle cx="24" cy="25" r="3" fill="#4d7cff"/></svg>
         </div>
         <span style="font-family:'Exo 2',sans-serif;font-size:13px;font-weight:700;color:var(--green);letter-spacing:.2px;">Thrive AI</span>
         <span style="font-size:10px;background:var(--green);color:#0a0d14;padding:2px 8px;border-radius:10px;font-family:'Exo 2',sans-serif;font-weight:700;margin-left:auto;">Coming to App</span>
@@ -625,6 +628,14 @@ function switchAuthTab(mode){
   document.getElementById('authSub').textContent=mode==='signup'?'Join free — save your resources and favorites':'Good to have you back';
   document.getElementById('authNote').textContent=mode==='signup'?'By signing up you agree to our Terms of Service':'';
 }
+function toggleTheme(){
+  var isLight=document.body.classList.toggle('light-mode');
+  document.getElementById('themeBtn').textContent=isLight?'🌙':'☀️';
+  localStorage.setItem('thrive_theme',isLight?'light':'dark');
+}
+var savedTheme=localStorage.getItem('thrive_theme');
+if(savedTheme==='light'){document.body.classList.add('light-mode');document.getElementById('themeBtn').textContent='🌙';}
+
 function updateUserUI(){
   var on=!!currentUser;
   document.getElementById('navSignin').style.display=on?'none':'';
