@@ -1,3 +1,5 @@
+Output
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#0a0d14;--bg2:#111520;--bg3:#161b28;--border:#1e2535;--border2:#2a3450;--green:#00d68f;--green2:#00b377;--green-glow:rgba(0,214,143,0.15);--green-glow2:rgba(0,214,143,0.08);--navy:#4d7cff;--text:#e8edf5;--text2:#8892a4;--text3:#4a5568;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+:root{--bg:#0f1319;--bg2:#141923;--bg3:#191e2c;--border:#1e2535;--border2:#2a3450;--green:#00d68f;--green2:#00b377;--green-glow:rgba(0,214,143,0.15);--green-glow2:rgba(0,214,143,0.08);--navy:#4d7cff;--text:#e8edf5;--text2:#8892a4;--text3:#4a5568;}
+body.light-mode{--bg:#ffffff;--bg2:#f5f7fa;--bg3:#eef1f6;--border:#e2e8f0;--border2:#d0d9e8;--green:#00b377;--green2:#009960;--green-glow:rgba(0,179,119,0.12);--green-glow2:rgba(0,179,119,0.08);--navy:#3d6fff;--text:#0a0d14;--text2:#4a5568;--text3:#8892a4;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s;}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg2);}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px;}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,13,20,0.92);backdrop-filter:blur(12px);z-index:100;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);backdrop-filter:blur(12px);z-index:100;}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-text{font-family:'Exo 2',sans-serif;font-size:22px;font-weight:800;color:var(--green);letter-spacing:-1px;}
 .logo-text span{color:var(--navy);}
@@ -47,7 +50,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .cat:hover{border-color:var(--green);background:var(--bg3);box-shadow:0 0 16px var(--green-glow2);}
 .cat-name{font-family:'Exo 2',sans-serif;font-size:13px;font-weight:700;color:var(--text);}
 .cat-desc{font-size:11px;color:var(--text3);}
-.about{background:linear-gradient(135deg,#0d1528 0%,#0a1a14 100%);padding:80px 20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.about{background:var(--bg2);padding:80px 20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .about-inner{max-width:680px;margin:0 auto;text-align:center;}
 .about-inner h2{font-family:'Exo 2',sans-serif;font-size:38px;font-weight:800;color:var(--text);margin-bottom:22px;letter-spacing:-1px;}
 .about-inner h2 span{color:var(--green);}
@@ -155,6 +158,8 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;margin-top:8px;}
 .user-name{font-size:14px;font-weight:600;color:var(--text);font-family:'Exo 2',sans-serif;}
 .signout-btn{font-size:12px;color:var(--text3);cursor:pointer;border:none;background:none;padding:4px 8px;transition:color .15s;}
 .signout-btn:hover{color:var(--green);}
+.theme-toggle{width:34px;height:34px;border-radius:50%;border:1px solid var(--border2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .15s;color:var(--text2);}
+.theme-toggle:hover{border-color:var(--green);color:var(--green);}
 .chat-wrap{display:flex;flex-direction:column;border:1px solid var(--border2);border-radius:22px;overflow:hidden;max-width:700px;margin:0 auto;}
 .chat-msgs{height:340px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
 .chat-msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.55;}
@@ -200,6 +205,7 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;margin-top:8px;}
     <a href="#" onclick="openDash(event)">My Saves</a>
   </div>
   <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Toggle light/dark mode">🌙</button>
     <div class="user-bar" id="userBar">
       <div class="user-avatar" id="userAvatar">?</div>
       <span class="user-name" id="userName"></span>
@@ -255,7 +261,21 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;margin-top:8px;}
 <div class="app-section" id="app">
   <div class="app-inner">
     <h2>Thrive <span>App</span> — coming soon</h2>
-    <p>The full Thrive experience — including AI chat, personalized answers, and all your saved resources — is coming to iOS and Android.</p>
+    <p>The full Thrive experience is coming to iOS and Android. Your resources, your saves, and now — your personal AI assistant.</p>
+    <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:20px;padding:20px 22px;max-width:420px;margin:0 auto 28px;text-align:left;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--green-glow);border:1px solid rgba(0,214,143,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M16 26 C16 26 9 21 9 15 C9 11 12 8 16 8 C20 8 23 11 23 15 C23 21 16 26 16 26Z" fill="#00d68f" fill-opacity="0.5" stroke="#00d68f" stroke-width="1.5"/><line x1="16" y1="26" x2="16" y2="12" stroke="#00d68f" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="18" x2="12" y2="15" stroke="#00d68f" stroke-width="1.2" stroke-linecap="round"/><line x1="16" y1="21" x2="20" y2="18" stroke="#00d68f" stroke-width="1.2" stroke-linecap="round"/><circle cx="24" cy="25" r="3" fill="#4d7cff"/></svg>
+        </div>
+        <span style="font-family:'Exo 2',sans-serif;font-size:13px;font-weight:700;color:var(--green);letter-spacing:.2px;">Thrive AI</span>
+        <span style="font-size:10px;background:var(--green);color:#0a0d14;padding:2px 8px;border-radius:10px;font-family:'Exo 2',sans-serif;font-weight:700;margin-left:auto;">Coming to App</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="align-self:flex-end;background:var(--green-glow);border:1px solid rgba(0,214,143,0.2);border-radius:14px;border-bottom-right-radius:3px;padding:9px 13px;font-size:13px;color:var(--green);max-width:80%;">How do I apply for SNAP benefits?</div>
+        <div style="align-self:flex-start;background:var(--bg3);border:1px solid var(--border);border-radius:14px;border-bottom-left-radius:3px;padding:9px 13px;font-size:13px;color:var(--text2);max-width:85%;line-height:1.5;">You can apply online at your state's SNAP website or Benefits.gov. You'll need proof of income, ID, and residency. Most households are approved within 30 days.</div>
+      </div>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);font-size:11px;color:var(--green);font-family:'Exo 2',sans-serif;font-weight:700;letter-spacing:.3px;">✦ Includes Thrive AI — ask anything, get instant help</div>
+    </div>
     <div class="app-badges">
       <a href="#" class="app-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store — iOS</a>
       <a href="#" class="app-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l12.6-12.6-3.18-3.18L3.18 23.76zM20.44 10.64l-2.78-1.61-3.54 3.54 3.54 3.54 2.81-1.62c.8-.46.8-1.81-.03-1.85zM2.01 1.05C1.8 1.27 1.69 1.6 1.69 2.03V21.97c0 .43.12.76.33.99l.05.04 11.22-11.22v-.27L2.06 1.01l-.05.04zM13.41 13.41L4.19 22.63c.3.17.66.21 1.02.01l12.6-7.27-4.4-1.96z"/></svg>Google Play — Android</a>
@@ -306,8 +326,11 @@ footer p{font-size:14px;color:var(--text3);margin-bottom:24px;margin-top:8px;}
   <div class="footer-logo">
     <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="32" height="32" rx="10" fill="#00d68f" fill-opacity="0.12"/>
+      <rect x="1" y="1" width="30" height="30" rx="9" stroke="#00d68f" stroke-opacity="0.2" stroke-width="1" fill="none"/>
       <path d="M16 26 C16 26 9 21 9 15 C9 11 12 8 16 8 C20 8 23 11 23 15 C23 21 16 26 16 26Z" fill="#00d68f" fill-opacity="0.2" stroke="#00d68f" stroke-width="1.5"/>
       <line x1="16" y1="26" x2="16" y2="12" stroke="#00d68f" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="16" y1="18" x2="12" y2="15" stroke="#00d68f" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="16" y1="21" x2="20" y2="18" stroke="#00d68f" stroke-width="1.2" stroke-linecap="round"/>
       <circle cx="24" cy="25" r="3" fill="#4d7cff"/>
     </svg>
     <h3>thrive<span>.</span></h3>
@@ -437,7 +460,7 @@ var cats=[
   },
   {name:'Legal & Rights',desc:'Know your rights',
    questions:[{id:'issue',l:'What is the legal issue?',t:'select',o:['Tenant & housing rights','Employment rights','Immigration & visa','Family law & divorce','Criminal defense','Consumer rights','Disability rights','Domestic violence','Small claims court','Expungement & records']},{id:'lawyer',l:'Do you have a lawyer?',t:'select',o:['No — need free help','Looking for affordable options','Yes — need more info']},{id:'state',l:'Your state',t:'text',p:'e.g. Florida'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Describe your legal situation...'}],
-   buildLinks:function(a){var state=encodeURIComponent(a.state||'');var issue=a.issue||'';var links=[];links.push({n:'LawHelp.org — Free Legal Aid in '+(a.state||'Your State'),u:'https://www.lawhelp.org/find-legal-help?states='+state});if(issue.includes('Tenant')){links.push({n:'Nolo — Tenant Rights',u:'https://www.nolo.com/legal-encyclopedia/tenant-rights'});}if(issue.includes('Employment')){links.push({n:'EEOC — File Employment Complaint',u:'https://www.eeoc.gov/filing-charge-discrimination'});}if(issue.includes('Immigration')){links.push({n:'ILRC — Immigration Legal Help',u:'https://www.ilrc.org'});links.push({n:'ACLU — Immigrant Rights',u:'https://www.aclu.org/know-your-rights/immigrants-rights'});}if(issue.includes('Family')||issue.includes('divorce')){links.push({n:'WomensLaw.org — Family Law Help',u:'https://www.womenslaw.org'});}if(issue.includes('Criminal')){links.push({n:'ACLU — Know Your Rights',u:'https://www.aclu.org/know-your-rights/stopped-by-police'});}if(issue.includes('Consumer')){links.push({n:'CFPB — File a Consumer Complaint',u:'https://www.consumerfinance.gov/complaint/'});links.push({n:'FTC — Report Fraud',u:'https://reportfraud.ftc.gov'});}if(issue.includes('Domestic')){links.push({n:'National DV Hotline — 1-800-799-7233',u:'https://www.thehotline.org'});}if(issue.includes('Small claims')){links.push({n:'Nolo — Small Claims Court Guide',u:'https://www.nolo.com/legal-encyclopedia/small-claims-court'});}if(issue.includes('Expungement')){links.push({n:'Clean Slate Clearinghouse',u:'https://cleanslateworks.org'});}return links;}
+   buildLinks:function(a){var state=encodeURIComponent(a.state||'');var issue=a.issue||'';var links=[];links.push({n:'LawHelp.org — Free Legal Aid in '+(a.state||'Your State'),u:'https://www.lawhelp.org/find-legal-help?states='+state});if(issue.includes('Tenant')){links.push({n:'Nolo — Tenant Rights',u:'https://www.nolo.com/legal-encyclopedia/tenant-rights'});}if(issue.includes('Employment')){links.push({n:'EEOC — File Employment Complaint',u:'https://www.eeoc.gov/filing-charge-discrimination'});}if(issue.includes('Immigration')){links.push({n:'ILRC — Immigration Legal Help',u:'https://www.ilrc.org'});links.push({n:'ACLU — Immigrant Rights',u:'https://www.aclu.org/know-your-rights/immigrants-rights'});}if(issue.includes('Family')||issue.includes('divorce')){links.push({n:'WomensLaw.org — Family Law Help',u:'https://www.womenslaw.org'});}if(issue.includes('Criminal')){links.push({n:'ACLU — Know Your Rights',u:'https://www.aclu.org/know-your-rights/stopped-by-police'});}if(issue.includes('Consumer')){links.push({n:'CFPB — File a Consumer Complaint',u:'https://www.consumerfinance.gov/complaint/'});links.push({n:'FTC — Report Fraud',u:'https://reportfraud.ftc.gov'});}if(issue.includes('Domestic')){links.push({n:'National DV Hotline — 1-800-799-7233',u:'https://www.thehotline.org'});}if(issue.includes('Small claims')){links.push({n:'Nolo — Small Claims Court Guide',u:'https://www.nolo.com/legal-encyclopedia/small-claims-court'});}if(issue.includes('Expungement')){links.push({n:'Collateral Consequences — Expungement Help',u:'https://ccresourcecenter.org/state-restoration-profiles/'});}return links;}
   },
   {name:'Education',desc:'Learning, aid, skills',
    questions:[{id:'goal',l:'Education goal',t:'select',o:['Get my GED','Start or return to college','Learn a new skill or trade','Get financial aid','Help my child with school','Adult education & literacy','Learn English (ESL)','Vocational or trade school','Online learning']},{id:'budget',l:'Budget for education',t:'select',o:['Free only','Under $500','$500–$2,000','No limit']},{id:'state',l:'Your state',t:'text',p:'e.g. New York'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more about your goals...'}],
@@ -457,7 +480,7 @@ var cats=[
   },
   {name:'Transportation',desc:'Rides, transit, assistance',
    questions:[{id:'need',l:'What do you need?',t:'select',o:['Daily commute help','Medical appointment rides','Car assistance or loans','Car repair help','Disability transportation','Public transit directions','Free or low-cost rides','Bike share programs']},{id:'car',l:'Do you have a car?',t:'select',o:['Yes — working fine','Yes — needs repair','No car','No license']},{id:'location',l:'City or zip code',t:'text',p:'e.g. Denver, CO'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
-   buildLinks:function(a){var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];if(need.includes('commute')||need.includes('transit')||need.includes('directions')){links.push({n:'Google Maps — Transit Directions',u:'https://www.google.com/maps/dir/?api=1&travelmode=transit&destination='+loc});links.push({n:'Transit App — Real-Time Transit',u:'https://transitapp.com'});}if(need.includes('Medical')){links.push({n:'211.org — Medical Transportation',u:'https://www.211.org'});links.push({n:'Eldercare Locator — Ride Services',u:'https://eldercare.acl.gov'});}if(need.includes('Car assistance')||need.includes('loans')||a.car==='No car'){links.push({n:'Ways to Work — Affordable Car Loans',u:'https://www.waystowork.org'});links.push({n:'Good News Garage — Free Car Help',u:'https://goodnewsgarage.org'});}if(need.includes('repair')||a.car.includes('repair')){links.push({n:'Good News Garage — Car Repair',u:'https://goodnewsgarage.org'});links.push({n:'211.org — Car Repair Help',u:'https://www.211.org'});}if(need.includes('Disability')){links.push({n:'ADA — Paratransit Rights',u:'https://www.ada.gov/topics/transportation/'});}if(need.includes('Free')||need.includes('low-cost')){links.push({n:'211.org — Free Rides Near You',u:'https://www.211.org'});}if(links.length===0){links.push({n:'211.org Transportation',u:'https://www.211.org'});links.push({n:'Google Maps Transit',u:'https://maps.google.com'});}return links;}
+   buildLinks:function(a){var loc=encodeURIComponent(a.location||'');var need=a.need||'';var links=[];if(need.includes('commute')||need.includes('transit')||need.includes('directions')){links.push({n:'Google Maps — Transit Directions',u:'https://www.google.com/maps/dir/?api=1&travelmode=transit&destination='+loc});links.push({n:'Transit App — Real-Time Transit',u:'https://transitapp.com'});}if(need.includes('Medical')){links.push({n:'211.org — Medical Transportation',u:'https://www.211.org'});links.push({n:'Eldercare Locator — Ride Services',u:'https://eldercare.acl.gov'});}if(need.includes('Car assistance')||need.includes('loans')||a.car==='No car'){links.push({n:'Community Development Financial Institutions',u:'https://www.cdfifund.gov/programs-training/programs/cdfi'});links.push({n:'Good News Garage — Free Car Help',u:'https://goodnewsgarage.org'});}if(need.includes('repair')||a.car.includes('repair')){links.push({n:'Good News Garage — Car Repair',u:'https://goodnewsgarage.org'});links.push({n:'211.org — Car Repair Help',u:'https://www.211.org'});}if(need.includes('Disability')){links.push({n:'ADA — Paratransit Rights',u:'https://www.ada.gov/topics/transportation/'});}if(need.includes('Free')||need.includes('low-cost')){links.push({n:'211.org — Free Rides Near You',u:'https://www.211.org'});}if(links.length===0){links.push({n:'211.org Transportation',u:'https://www.211.org'});links.push({n:'Google Maps Transit',u:'https://maps.google.com'});}return links;}
   },
   {name:'Mental Health',desc:'Support, crisis, wellbeing',
    questions:[{id:'situation',l:'What are you dealing with?',t:'select',o:['Anxiety or stress','Depression','Grief or loss','Trauma or PTSD','Crisis or suicidal thoughts','Loneliness or isolation','Anger management','Addiction & recovery','General mental wellness']},{id:'crisis',l:'Are you currently in crisis?',t:'select',o:['No','Yes — need immediate help','Not sure — I might be']},{id:'support',l:'What kind of support do you want?',t:'select',o:['Talk to someone now','Find a therapist','Online resources & tools','Support groups','Crisis resources']},{id:'state',l:'Your state',t:'text',p:'e.g. Washington'}],
@@ -490,10 +513,6 @@ var cats=[
   {name:'Veterans',desc:'Benefits, health, support',
    questions:[{id:'need',l:'What do you need?',t:'select',o:['VA healthcare','Disability compensation','Housing assistance','Education & GI Bill','Mental health support','Employment help','Legal assistance','Homeless veteran services','Caregiver support']},{id:'branch',l:'Branch of service',t:'select',o:['Army','Navy','Marine Corps','Air Force','Coast Guard','National Guard','Reserve','Prefer not to say']},{id:'state',l:'Your state',t:'text',p:'e.g. Texas'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
    buildLinks:function(a){var need=a.need||'';var links=[];links.push({n:'VA.gov — All Veteran Benefits',u:'https://www.va.gov/resources/'});if(need.includes('healthcare')){links.push({n:'VA — Find a VA Medical Center',u:'https://www.va.gov/find-locations/'});}if(need.includes('Disability')){links.push({n:'VA — Apply for Disability Benefits',u:'https://www.va.gov/disability/how-to-file-claim/'});}if(need.includes('Housing')){links.push({n:'VA — HUD-VASH Housing Program',u:'https://www.va.gov/homeless/hud-vash.asp'});}if(need.includes('Education')||need.includes('GI Bill')){links.push({n:'VA — GI Bill Benefits',u:'https://www.va.gov/education/about-gi-bill-benefits/'});}if(need.includes('Mental health')){links.push({n:'Veterans Crisis Line — Call 988 Press 1',u:'https://www.veteranscrisisline.net'});}if(need.includes('Employment')){links.push({n:'Hire Heroes USA — Free Job Help',u:'https://www.hireheroesusa.org'});}if(need.includes('Homeless')){links.push({n:'VA — Homeless Veterans Programs',u:'https://www.va.gov/homeless/'});}return links;}
-  },
-  {name:'Substance Abuse & Recovery',desc:'Addiction help, rehab, support',
-   questions:[{id:'need',l:'What do you need?',t:'select',o:['Find a rehab program','Detox help','Outpatient treatment','Support groups (AA/NA)','Help for a family member','Mental health & addiction','Sober living housing','Medication-assisted treatment']},{id:'substance',l:'Type of substance',t:'select',o:['Alcohol','Opioids / heroin','Prescription drugs','Meth or stimulants','Cocaine','Marijuana','Multiple substances','Prefer not to say']},{id:'state',l:'Your state',t:'text',p:'e.g. California'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more...'}],
-   buildLinks:function(a){var need=a.need||'';var state=encodeURIComponent(a.state||'');var links=[];links.push({n:'SAMHSA — Find Treatment Near You',u:'https://findtreatment.samhsa.gov'});links.push({n:'SAMHSA Helpline — Free 24/7 1-800-662-4357',u:'https://www.samhsa.gov/find-help/national-helpline'});if(need.includes('rehab')||need.includes('Detox')||need.includes('Outpatient')){links.push({n:'SAMHSA Treatment Locator',u:'https://findtreatment.samhsa.gov'});links.push({n:'American Addiction Centers',u:'https://americanaddictioncenters.org'});}if(need.includes('Support groups')||need.includes('AA')||need.includes('NA')){links.push({n:'AA — Find a Meeting Near You',u:'https://www.aa.org/find-aa'});links.push({n:'NA — Find a Meeting',u:'https://www.na.org/meetingsearch/'});}if(need.includes('family')||need.includes('Family')){links.push({n:'Al-Anon — Help for Families',u:'https://al-anon.org/al-anon-meetings/'});links.push({n:'Nar-Anon — Family Support',u:'https://www.nar-anon.org'});}if(need.includes('Sober living')){links.push({n:'Sober Living Network',u:'https://www.soberhouse.com'});}if(need.includes('Medication')){links.push({n:'SAMHSA — Medication Assisted Treatment',u:'https://www.samhsa.gov/medication-assisted-treatment'});}return links;}
   },
   {name:'Small Business',desc:'Start, grow, get funded',
    questions:[{id:'stage',l:'Where are you in your business?',t:'select',o:['Just an idea — starting from scratch','Just started — need help','Running — need to grow','Need financial help or grants','Need legal or tax help','Want to hire employees','Going online / e-commerce']},{id:'industry',l:'Type of business',t:'text',p:'e.g. Restaurant, Cleaning, Tech, Retail'},{id:'state',l:'Your state',t:'text',p:'e.g. California'},{id:'other',l:'Anything else? (optional)',t:'textarea',p:'Tell us more about your business...'}],
@@ -612,6 +631,14 @@ function switchAuthTab(mode){
   document.getElementById('authSub').textContent=mode==='signup'?'Join free — save your resources and favorites':'Good to have you back';
   document.getElementById('authNote').textContent=mode==='signup'?'By signing up you agree to our Terms of Service':'';
 }
+function toggleTheme(){
+  var isLight=document.body.classList.toggle('light-mode');
+  document.getElementById('themeBtn').textContent=isLight?'🌙':'☀️';
+  localStorage.setItem('thrive_theme',isLight?'light':'dark');
+}
+var savedTheme=localStorage.getItem('thrive_theme');
+if(savedTheme==='light'){document.body.classList.add('light-mode');document.getElementById('themeBtn').textContent='🌙';}
+
 function updateUserUI(){
   var on=!!currentUser;
   document.getElementById('navSignin').style.display=on?'none':'';
