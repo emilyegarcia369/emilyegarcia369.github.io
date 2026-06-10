@@ -43,8 +43,8 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:18px 4
 .section-center h2{font-family:'Exo 2',sans-serif;font-size:40px;font-weight:800;color:var(--text);margin-bottom:12px;letter-spacing:-1px;}
 .section-center h2 span{color:var(--green);}
 .section-center p{font-size:15px;color:var(--text2);line-height:1.75;}
-.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;max-width:960px;margin:0 auto;}
-.cat{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px 16px;cursor:pointer;transition:all .2s;text-decoration:none;display:flex;flex-direction:column;gap:4px;}
+.cats{display:flex;flex-wrap:wrap;gap:10px;max-width:960px;margin:0 auto;}
+.cat{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px 16px;cursor:pointer;transition:all .2s;text-decoration:none;display:flex;flex-direction:column;gap:4px;width:155px;flex-shrink:0;}
 .cat:hover{border-color:var(--green);background:var(--bg3);box-shadow:0 0 16px var(--green-glow2);}
 .cat-name{font-family:'Exo 2',sans-serif;font-size:13px;font-weight:700;color:var(--text);}
 .cat-desc{font-size:11px;color:var(--text3);}
@@ -607,8 +607,7 @@ async function sendChat(){
 function sendChip(el){document.getElementById('chatInput').value=el.textContent;sendChat();}
 function addChatMsg(content,role){var msgs=document.getElementById('chatMsgs');var d=document.createElement('div');d.className='chat-msg '+role;d.innerHTML=content;msgs.appendChild(d);scrollChat();return d;}
 function scrollChat(){var m=document.getElementById('chatMsgs');m.scrollTop=m.scrollHeight;}
-function updateChatLimit(){var remaining=FREE_CHAT_LIMIT-chatCount;document.getElementById('chatLimitText').textContent=isPremium?'Unlimited chats — Thrive+ member':remaining+' of '+FREE_CHAT_LIMIT+' free chats remaining today';document.getElementById('chatUpgradeBtn').style.display=isPremium?'none':'';}
-updateChatLimit();
+function updateChatLimit(){var el1=document.getElementById('chatLimitText');var el2=document.getElementById('chatUpgradeBtn');if(el1){var r=FREE_CHAT_LIMIT-chatCount;el1.textContent=isPremium?'Unlimited chats — Thrive+ member':r+' of '+FREE_CHAT_LIMIT+' free chats remaining today';}if(el2){el2.style.display=isPremium?'none':'';}} updateChatLimit();
 
 function openDash(e){if(e)e.preventDefault();if(!currentUser){openAuth(null,'signup');return;}renderDash();document.getElementById('dashModalBg').classList.add('open');}
 function switchDash(tab){document.querySelectorAll('.dash-tab').forEach(function(t,i){t.classList.toggle('active',(tab==='favorites'&&i===0)||(tab==='saved'&&i===1));});document.getElementById('favPanel').classList.toggle('active',tab==='favorites');document.getElementById('savedPanel').classList.toggle('active',tab==='saved');}
